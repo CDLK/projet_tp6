@@ -1,0 +1,73 @@
+On a choisi de partir sur un SITE DE PARTAGE comme le bon coin.
+
+ - Un site de partage décrit des objets ou des services déposés par des particuliers.
+ - Le site nécessite une inscription préalable, avec vérification par adresse email.
+ - Il propose des objets ou services classés par localisation, et par catégories.
+ - La durée de présence sur le site est limitée.
+
+Le Bon Coin, Paru Vendu
+
+Analyse de l'existant:
+
+
+Page d'acceuil:
+
+
+-En header il y a de la pub
+
+-Un menu pour pouvoir: -déposer offre, retirer offre, connecter...
+                       - dans LE BON COIN il y a une une searchBar
+ - pouvoir se connecter à son compte
+-Le body : -Le bon coin:
+                        - permet de faire un trie
+                        - affiche toutes les annonces qui ont été déposer dans l'ordre chronologique
+                        - à gauche de body il y a des pubs
+                        - permettre de changer de page(comme le tp de jukebox, page1,2,3...)
+                        - annonce (rd By SFR, vendre auto,...)
+                        - propositions de type de tri(CD/DVD, Decoiration,...) près-définie
+                        - footer information sur votre divers sur le site et l'entreprise via des liens
+
+            -Le Paru Vendu:
+                        - plusieurs categories de tries pré-définis
+                        - à gauche et à droite il y a des pubs
+                        - à gauche juste avant les pubs, il y a un mini trie sur l'immobilier, auto-moto, mon debarra, animaux
+                          avec un trie sur le temps, de plus récent au plus ancien
+                        - on peut les suivre par les réseaux sociaux
+                        - un mini menu(decouvrz nos services), avec tous les partenaires: sofinco, CAPFI, assurland.com
+                        - article pour mettre en avant des 'aides, conseils', pour promouvoir leurs produits
+
+                          exemple: Trouvez votre bien immobilier parmi nos annonces
+
+                                   Découvrez des centaines de milliers d'annonces
+                                   immobilières de particuliers et professionnels partout en France. Trouvez votre futur logement rapidement
+                                   sur votre site d'annonces gratuites.
+                                   Et parce que se lancer dans un parcours immobilier
+                                   que ce soit pour acheter ou louer n'est pas toujours simple, nous vous proposons de nombreux articles
+                                   édito immobiliers ; acheter ou louer devient plus simple et rapide.
+                        - Conseils et actualités deux images
+                        - footer information sur votre divers sur le site et l'entreprise via des liens
+
+
+Fonctionnalité voulu:
+
+ Page Perso/Compte:
+  - pouvoir se connecter à son compte
+  - avoir un espace personnel pour acceder au annonce qu'on a mis en ligne et retirer les annonces et en rajouter
+
+ Page de depose d'objet/service:
+  - permettre de deposer une photographie
+  - intitulé court
+  - un texte descriptif
+  - caractéristiques de l'objet/services
+  - prix
+  - localisation
+
+  Par exemple :
+      Les produits sont donc décrits au minimum par :
+
+        - Un intitulé court. Ex: "Perceuse sans fil MAKITA DF347DWEX3"
+        - Un complément d'information. Ex: "14.4V, 1.3Ah 2 bat li + 70 accessoires"
+        - Un prix. Ex. "199,00€ par unité."
+        - Une référence produit unique. Ex: "69418580"
+        - Une catégorie. Ex: "Perceuse sans fil et visseuse"
+        - Une photo du produit.
