@@ -26,6 +26,7 @@ Page d'acceuil:
                         - annonce (rd By SFR, vendre auto,...)
                         - propositions de type de tri(CD/DVD, Decoiration,...) près-définie
                         - footer information sur votre divers sur le site et l'entreprise via des liens
+                        -qsfhsd
 
             -Le Paru Vendu:
                         - plusieurs categories de tries pré-définis
