@@ -16,7 +16,7 @@ Page d'acceuil:
 -En header il y a de la pub
 
 -Un menu pour pouvoir: -déposer offre, retirer offre, connecter...
-                       - dans LE BON COIN il y a une une searchBar
+                       - dans LE BON COIN il y a une searchBar
  - pouvoir se connecter à son compte
 -Le body : -Le bon coin:
                         - permet de faire un trie
@@ -33,7 +33,7 @@ Page d'acceuil:
                         - à gauche juste avant les pubs, il y a un mini trie sur l'immobilier, auto-moto, mon debarra, animaux
                           avec un trie sur le temps, de plus récent au plus ancien
                         - on peut les suivre par les réseaux sociaux
-                        - un mini menu(decouvrz nos services), avec tous les partenaires: sofinco, CAPFI, assurland.com
+                        - un mini menu(decouvrez nos services), avec tous les partenaires: sofinco, CAPFI, assurland.com
                         - article pour mettre en avant des 'aides, conseils', pour promouvoir leurs produits
 
                           exemple: Trouvez votre bien immobilier parmi nos annonces
