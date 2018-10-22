@@ -1,4 +1,4 @@
-Create table article{
+Create table offre{
 ref INTEGER PRIMARY KEY,
 photo TEXT,
 intitule TEXT,
@@ -27,5 +27,5 @@ Create table categorie{
 id INTEGER PRIMARY KEY,
 intitule TEXT,
 categorieG TEXT,
-FOREIGN KEY id REFERENCE article(id)
+FOREIGN KEY id REFERENCE offre(id)
 };
