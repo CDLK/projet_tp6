@@ -6,7 +6,7 @@ prix FLOAT,
 region TEXT,
 caracteristique TEXT,
 id INTEGER,
-FOREIGN KEY id REFERENCE utilisateur(id)
+FOREIGN KEY id REFERENCE utilisateur(id),
 FOREIGN KEY region REFERENCE utilisateur(region)
 };
 
