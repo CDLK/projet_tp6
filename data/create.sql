@@ -25,7 +25,7 @@ AGE INTEGER,
 mdp TEXT,
 region TEXT,
 mail TEXT,
-TELEPHONE INTEGER
+TELEPHONE INTEGER,
 FOREIGN KEY (region) REFERENCES region(nom)
 );
 
@@ -37,5 +37,5 @@ FOREIGN KEY (pere) REFERENCES categorie(id)
 );
 
 Create table region (
-nom TEXT  PRIMARY KEY,
+nom TEXT PRIMARY KEY
 );
