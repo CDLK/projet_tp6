@@ -3,7 +3,7 @@
 class offre{
 
   private $ref;
-  private $photo;
+  private $photo; //bien mettre le image de la même taille
   private $intitule;
   private $prix;
   private $region;
@@ -46,8 +46,62 @@ public function __get(string $property) {
     //car dans le test on fait a->...
     //et le attribut sont en private
   }
+
 }
 
+
+class utilisateur {
+
+  private $identifiant;
+  private $nomUser;
+  private $prenomUser;
+  private $age;
+  private $mdp;
+  private $region;
+  private $mail;
+  private $telephone;
+
+  function __construct(string $nomUser, string $prenomUser,int $age, string $mdp, string $region, string $mail, int $telephone){
+  //$this->identifiant = identifiant recuperer le dernier numero d'identifiant
+  $this->nomUser = $nomUser;
+  $this->prenomUser= $prenomUser;
+  $this->age = $age;
+  $this->mdp = $mdp;
+  $this->region = $region;
+  $this->mail = $mail;
+  $this->telephone = $telephone;
+
+    // Verification que toutes les valeurs sont renseignées
+    //assert — Vérifie si une assertion est fausse
+    assert(isset($this->nomUser));
+    assert(isset($this->prenomUser));
+    assert(isset($this->age));
+    assert(isset($this->mdp));
+    assert(isset($this->region));
+    assert(isset($this->caracteristique));
+    assert(isset($this->mail));
+    assert(isset($this->telephone));
+    }
+}
+
+class categorie{
+  private $id;
+  private $intitule;
+  private $pere;
+
+  function __construct(int $id, string $intitule, int $pere){
+    $this->id = $id;
+    $this->intitule = $intitule;
+    $this->pere = $pere;
+
+    assert(isset($this->id));
+    assert(isset($this->intitule));
+    assert(isset($this->pere));
+
+
+  }
+
+}
 
 
 
