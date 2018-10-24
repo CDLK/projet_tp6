@@ -2,7 +2,7 @@ drop table offre;
 drop table categorie;
 drop table utilisateur;
 
-
+--C3C3fgqsdh
 Create table offre (
 ref INTEGER PRIMARY KEY,
 photo TEXT,
