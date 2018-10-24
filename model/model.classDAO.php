@@ -81,11 +81,61 @@ function getAllRegion() : array {
 
 function search($name) : array{
   $tab = array();
-  $rep = "SELECT * FROM produit where";
+  $rep = "SELECT * FROM offre where intitule LIKE %$name%";
+  try{
+      if($d = $this->db->query($req)){
+        $tab=$d->fetchAll();
+      }
+    }catch(Exception $e){
+      echo "error au niveau du search".$e;
+      return NULL;
+    }
+    return $tab;
 }
 
+//recherche les produits par region
+function searchOffreRegion() : array {
+  $tab = array();
+  $rep = "SELECT * FROM produit p, offre o WHERE p.region = o.region";
+  try{
+      if($d = $this->db->query($req)){
+        $tab=$d->fetchAll();
+      }
+    }catch(Exception $e){
+      echo "error au niveau du searchOffreRegion".$e;
+      return NULL;
+    }
+    return $tab;
+}
 
-
+// cherche les categorie mère tel que produit
+function searchCatMaman() : array{
+  $tab = array();
+  $rep = "SELECT * FROM categorie WHERE id = pere";
+  try{
+      if($d = $this->db->query($req)){
+        $tab=$d->fetchAll();
+      }
+    }catch(Exception $e){
+      echo "error au niveau du searchCatMaman".$e;
+      return NULL;
+    }
+    return $tab;
+}
+//recherche par offre/region/categorie
+function searchORC($region, $categorie) : array{
+  $tab = array();
+  $rep = "SELECT * FROM offre o, region r, categorie c WHERE o.region=$egion->nom AND o.categorie=$categorie->id";
+  try{
+      if($d = $this->db->query($req)){
+        $tab=$d->fetchAll();
+      }
+    }catch(Exception $e){
+      echo "error au niveau du searchORC".$e;
+      return NULL;
+    }
+    return $tab;
+}
 
 
 
