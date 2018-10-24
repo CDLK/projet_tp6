@@ -1,6 +1,6 @@
 <?php
 
-class offre{
+class Offre{
 
   private $ref;
   private $photo; //bien mettre le image de la même taille
@@ -50,7 +50,7 @@ public function __get(string $property) {
 }
 
 
-class utilisateur {
+class Utilisateur {
 
   private $identifiant;
   private $nomUser;
@@ -82,9 +82,23 @@ class utilisateur {
     assert(isset($this->mail));
     assert(isset($this->telephone));
     }
+
+
+
+    //////////////////////////////////////////////////////////////////
+      // Getter : on en déclare qu'un seul pour tous les acces
+      //////////////////////////////////////////////////////////////////
+    public function __get(string $property) {
+        ///////////////////////////////////////////////////////////////////////////
+        // COMPLETER LE RETOUR DU GETTER GENERIQUE
+        ///////////////////////////////////////////////////////////////////////////
+        return $this->$property;
+        //car dans le test on fait a->...
+        //et le attribut sont en private
+      }
 }
 
-class categorie{
+class Categorie{
   private $id;
   private $intitule;
   private $pere;
@@ -100,6 +114,20 @@ class categorie{
 
 
   }
+
+
+
+  //////////////////////////////////////////////////////////////////
+    // Getter : on en déclare qu'un seul pour tous les acces
+    //////////////////////////////////////////////////////////////////
+  public function __get(string $property) {
+      ///////////////////////////////////////////////////////////////////////////
+      // COMPLETER LE RETOUR DU GETTER GENERIQUE
+      ///////////////////////////////////////////////////////////////////////////
+      return $this->$property;
+      //car dans le test on fait a->...
+      //et le attribut sont en private
+    }
 
 }
 
