@@ -1,5 +1,5 @@
 .read create.sql
-import region.txt region
+import regionDb.txt region
 import utilisateurDb.txt utilisateur
 import categorieDb.txt categorie
-import articleDb.txt offre
+import offreDb.txt offre
