@@ -1,4 +1,4 @@
-01 | Produit | 01
-02 | Bricolage | 01
-03 | Jardinage | 02
-04 | Outils | 02
+01|Produit|01
+02|Bricolage|01
+03|Jardinage|02
+04|Outils|02
