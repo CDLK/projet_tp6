@@ -1,2 +1,2 @@
-0001 | LaTaupe | René | 56 | motDePasse | rhone-alpes | RenéLaTaupe@gmail.com | 04 73 73 73 73
-0002 | Gaillard | Remy | 26 | azertyuiop | Picardie | connerie@orange.com | 06 45 26 83 63
+0001|LaTaupe|René|56|motDePasse|rhone-alpes|RenéLaTaupe@gmail.com|0473737373
+0002|Gaillard|Remy|26|azertyuiop|Picardie|connerie@orange.com|0645268363
