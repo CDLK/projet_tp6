@@ -26,6 +26,6 @@
       $list[$i] = $config['data_url'].'/img/'.$m->cover;
     }
 
-    include('../view/main.view.php');
+    include('../view/mainPage.view.php');
 
 ?>
