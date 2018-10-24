@@ -6,19 +6,5 @@
   </head>
   <body>
 
-
-
-    <?php foreach ($offre as $offres => $value) { ?>
-      <div class="Offre">
-        <img src="" alt="">
-        <div >
-          <h4><?=echo $offre->intitule   ?></h4>
-          <p></p>
-        </div>
-
-      </div>
-    <?php  }?>
-
-
   </body>
 </html>
