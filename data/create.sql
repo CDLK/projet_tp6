@@ -1,3 +1,8 @@
+drop table offre;
+drop table categorie;
+drop table utilisateur;
+
+
 Create table offre (
 ref INTEGER PRIMARY KEY,
 photo TEXT,
@@ -6,12 +11,14 @@ prix FLOAT,
 region TEXT,
 caracteristique TEXT,
 id INTEGER,
-FOREIGN KEY id REFERENCE utilisateur(id),
-FOREIGN KEY region REFERENCE utilisateur(region)
+categorie INTEGER,
+FOREIGN KEY (id) REFERENCES utilisateur(identifiant),
+FOREIGN KEY (region) REFERENCES utilisateur(region),
+FOREIGN KEY (categorie) REFERENCES categorie(id)
 );
 
 Create table utilisateur (
-id INTEGER PRIMARY KEY,
+identifiant INTEGER PRIMARY KEY,
 nomUser TEXT,
 prenomUser TEXT,
 AGE INTEGER,
@@ -24,6 +31,6 @@ TELEPHONE INTEGER
 Create table categorie (
 id INTEGER PRIMARY KEY,
 intitule TEXT,
-categorieG TEXT,
-FOREIGN KEY id REFERENCE offre(id)
+pere INTEGER,
+FOREIGN KEY (pere) REFERENCES categorie(id)
 );
