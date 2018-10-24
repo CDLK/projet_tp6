@@ -1,3 +1,5 @@
 0001 | 0001.jpg | bible | 5.99 | Rhone-Alpes  | Dieu est parmi nous, dites vos péchés | 0001
-0002 | 0002.jpg | hache | 69.99 | Centre | coupe très bien | 0001
+0002 | 0002.jpg | hache | 69.99 | Rhone-Alpes | coupe très bien | 0001
 0003 | 0003.jpg | marteau | 20.99 | Picardie | ecrase bien | 0002
+0004 | 0004.jpg | marteau piqueur | 259.99 | Rhone-Alpes| fend le béton | 0003
+0005 | 0005.jpg | marteau piqueur | 350.99 | Picardie | fend extremement bien le béton | 0002
