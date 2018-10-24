@@ -111,11 +111,7 @@ class Categorie{
     assert(isset($this->id));
     assert(isset($this->intitule));
     assert(isset($this->pere));
-
-
   }
-
-
 
   //////////////////////////////////////////////////////////////////
     // Getter : on en déclare qu'un seul pour tous les acces

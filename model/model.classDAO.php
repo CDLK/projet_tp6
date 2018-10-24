@@ -26,7 +26,8 @@ function getAllCats() : array {
     $req = "SELECT * FROM categorie";
     try{
       if($d = $this->db->query($req)){
-        $tab=$d->fetchAll(PDO::FETCH_CLASS,'Categorie');
+        //PDO::FETCH_CLASS,'Categorie'
+        $tab=$d->fetchAll(PDO::FETCH_CLASS,'Categorie', array('id','intitule','pere'));
       }
     }catch(Exception $e){
       echo "error au niveau du getAllCat ".$e;
@@ -53,7 +54,8 @@ function getAllUsers() : array {
     $req = "SELECT * FROM offre";
     try{
       if($d = $this->db->query($req)){
-        $tab=$d->fetchAll(PDO::FETCH_CLASS, 'Offre');
+        $tab=$d->fetchAll(PDO::FETCH_CLASS
+        , 'Offre');
       }
     }catch(Exception $e){
       echo "error au niveau du getAllOffres ".$e;
@@ -76,6 +78,10 @@ function getAllRegion() : array {
     return $tab[0];
 }
 
+
+function search($name) : array{
+  $tab = array();
+  $rep = "SELECT * FROM produit where";
 }
 
 
@@ -95,4 +101,20 @@ function getAllRegion() : array {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
  ?>
