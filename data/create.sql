@@ -1,6 +1,7 @@
 drop table offre;
 drop table categorie;
 drop table utilisateur;
+drop table region;
 
 Create table offre (
 ref INTEGER PRIMARY KEY,
@@ -25,6 +26,7 @@ mdp TEXT,
 region TEXT,
 mail TEXT,
 TELEPHONE INTEGER
+FOREIGN KEY (region) REFERENCES region(nom)
 );
 
 Create table categorie (
@@ -32,4 +34,8 @@ id INTEGER PRIMARY KEY,
 intitule TEXT,
 pere INTEGER,
 FOREIGN KEY (pere) REFERENCES categorie(id)
+);
+
+Create table region (
+nom TEXT  PRIMARY KEY,
 );
