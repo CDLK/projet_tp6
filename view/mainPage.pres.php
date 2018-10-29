@@ -6,30 +6,7 @@
     <title>Test Les Halles du Web</title>
   </head>
   <body>
-    <header>
-      <div class="SearchPanel">
-        <h1>Les Halles du Web</h1>
-        <form class="" action="" method="post">
-          <p>Categories :
-          <select class="" name="Categories"> <!--  Remplacer par php -->
-            <option value="Outils">Outils</option>
-            <option value="Jardinage">Jardinage</option>
-          </select>
-          Region :
-          <select class="" name="Region">  <!--  Remplacer par php -->
-            <option value="Rhone">Rhone</option>
-            <option value="Picardie">Picardie</option>
-            <option value="Centre">Centre</option>
-          </select>
-          <input type="submit" name="Rechercher" value="Rechercher">
-          </p>
-        </form>
-      </div>
-      <div class="PersonnalPanel">
-        <a href="pageConnection.html"><p>Se connecter</p></a>
-        <a href="pageConnection.html"><p>Creer Un Compte</p></a>
-      </div>
-    </header>
+    <?php include('header.view.php'); ?>
     <nav>
       <div class="Categorie">
         <h3>Categorie 1</h3>
