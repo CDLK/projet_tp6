@@ -6,8 +6,6 @@ require_once("../model/model.class.php");
 //pour les tests
 $dao = new DAO();
 
-
-
 class DAO{
     private $db;
     function __construct(){
@@ -125,7 +123,7 @@ function searchCatMaman() : array{
 //recherche par offre/region/categorie
 function searchORC($region, $categorie) : array{
   $tab = array();
-  $rep = "SELECT * FROM offre o, region r, categorie c WHERE o.region=$egion->nom AND o.categorie=$categorie->id";
+  $rep = "SELECT * FROM offre o, region r, categorie c WHERE o.region=$region->nom AND o.categorie=$categorie->id";
   try{
       if($d = $this->db->query($req)){
         $tab=$d->fetchAll();
