@@ -6,7 +6,7 @@
     <title>Test Les Halles du Web</title>
   </head>
   <body>
-    <?php include('header.view.php'); ?>
+    <?php include('../controleur/header.ctrl.php'); ?>
     <nav>
       <div class="Categorie">
         <h3>Categorie 1</h3>

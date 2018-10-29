@@ -67,7 +67,8 @@ function getAllRegions() : array {
     $req = "SELECT * FROM region";
     try{
       if($d = $this->db->query($req)){
-        $tab=$d->fetchAll();
+        $tab=$d->fetchAll(PDO::FETCH_CLASS
+        , 'Region');
       }
     }catch(Exception $e){
       echo "error au niveau du getAllregion".$e;

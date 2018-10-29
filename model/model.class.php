@@ -129,6 +129,10 @@ class Categorie{
 
 class Region{
   private $nom;
+
+  public function getNom() {
+      return $this->nom;
+    }
 }
 
 
