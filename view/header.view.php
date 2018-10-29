@@ -2,15 +2,16 @@
   <div class="SearchPanel">
     <form class="" action="" method="post">
       <p>Categories :
-      <select class="" name="Categories"> <!--  Remplacer par php -->
-        <option value="Outils">Outils</option>
-        <option value="Jardinage">Jardinage</option>
+      <select class="" name="Categories">
+        <?php  foreach ($categorie as $categories => $value) { ?>
+          <option value="<?= echo $value ?>"><?= echo $value ?></option>
+        <?= } ?>
       </select>
       Region :
-      <select class="" name="Region">  <!--  Remplacer par php -->
-        <option value="Rhone">Rhone</option>
-        <option value="Picardie">Picardie</option>
-        <option value="Centre">Centre</option>
+      <select class="" name="Region">
+        <?php  foreach ($region as $regions => $value) { ?>
+          <option value="<?= echo $value ?>"><?= echo $value ?></option>
+        <?= } ?>
       </select>
       <input type="submit" name="Rechercher" value="Rechercher">
       </p>
