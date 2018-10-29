@@ -5,11 +5,10 @@
     <title>Les Halles du Web</title>
   </head>
   <body>
-    <header>
-      <h1>Les halles du web !</h1>
-    </header>
+    <?php include('header.view.php'); ?>
     <nav>
       <?php foreach ($offre as $offres => $value) { // Affichage de chaque offre dans la recherche?>
+        <a href="#">
         <div class="Offre">
           <img src="" alt="">
           <div >
@@ -17,10 +16,11 @@
             <p><?=echo $offre->description?></p>
           </div>
         </div>
+        </a>
       <?php  }?>
     </nav>
     <a href=""></a>
     <a href=""></a>
-    <footer></footer>
+    <?php include('footer.view.php'); ?>
   </body>
 </html>
