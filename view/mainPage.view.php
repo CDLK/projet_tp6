@@ -1,21 +1,26 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style/mainPage.style.css" />
-    <title>Les Halles du Web</title>
+    <link rel="stylesheet" href="../view/style/mainPage.style.css">
+    <title>Test Les Halles du Web</title>
   </head>
   <body>
-    <header>
-      <h1>Les halles du web !</h1>
-    </header>
+    <?php include('../controleur/header.ctrl.php'); ?>
     <nav>
-      <?php foreach ($categorie as $categories => $value) { // Affichage de chaque categorie?>
+      <?php foreach ($catMeres as $catM) {
+        $catFilles = $dao->getCatFille($catM->__get('id'));?>
         <div class="Categorie">
-            <h4><?=echo $categorie->intitule?></h4>
+          <h3><?php echo $catM->__get('intitule') ?></h3>
+          <div class="">
+            <ul>
+            <?php foreach ($catFilles as $catF) {?>
+                  <li><a href="#"><p><?php $catF->__get('intitule') ?></p></a></li>
+            <?php } ?>
+            </ul>
+          </div>
         </div>
-      <?php  }?>
+      <?php } ?>
     </nav>
-    <footer></footer>
+    <?php include('footer.view.php'); ?>
   </body>
 </html>

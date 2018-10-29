@@ -108,12 +108,12 @@ function searchOffreRegion() : array {
 }
 
 // cherche les categorie mère tel que produit
-function searchCatMere() : array{
+function getCatMere() : array{
   $tab = array();
-  $rep = "SELECT * FROM categorie WHERE id = pere";
+  $rep = "SELECT * FROM categorie WHERE id = 1";
   try{
       if($d = $this->db->query($req)){
-        $tab=$d->fetchAll();
+        $tab=$d->fetchAll(PDO::FETCH_CLASS,'Categorie');
       }
     }catch(Exception $e){
       echo "error au niveau du searchCatMaman".$e;
@@ -123,12 +123,13 @@ function searchCatMere() : array{
 }
 
 // cherche les categories ayant pour pere cat
-function searchCatFille($cat) : array{
+function getCatFille($cat) : array{
   $tab = array();
   $rep = "SELECT * FROM categorie WHERE id = $cat";
   try{
       if($d = $this->db->query($req)){
-        $tab=$d->fetchAll();
+        $tab=$d->fetchAll(PDO::FETCH_CLASS
+        , 'Categorie');
       }
     }catch(Exception $e){
       echo "error au niveau du searchCatMaman".$e;

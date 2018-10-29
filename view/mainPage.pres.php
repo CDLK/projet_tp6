@@ -1,8 +1,7 @@
-<!-- <?php //phpinfo(); ?> -->
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style/mainPage.style.css">
+    <link rel="stylesheet" href="../view/style/mainPage.style.css">
     <title>Test Les Halles du Web</title>
   </head>
   <body>

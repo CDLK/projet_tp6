@@ -7,7 +7,7 @@ require_once('../model/model.classDAO.php');
 $cat = $dao->getAllCats();
 $user = $dao->getAllUsers();
 $offre = $dao->getAllOffres();
-$region = $dao->getAllRegion();
+$region = $dao->getAllRegions();
 
 // Affiche 2 catégories pour le test : affiche le pere d'une catégorie
   var_dump($cat);

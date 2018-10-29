@@ -1,2 +1,2 @@
-0001|LaTaupe|René|56|motDePasse|Rhône-Alpes|RenéLaTaupe@gmail.com|0473737373
-0002|Gaillard|Remy|26|azertyuiop|Rhône-Alpes|connerie@orange.com|0645268363
+1|LaTaupe|René|56|motDePasse|Rhône-Alpes|RenéLaTaupe@gmail.com|0473737373
+2|Gaillard|Remy|26|azertyuiop|Rhône-Alpes|connerie@orange.com|0645268363

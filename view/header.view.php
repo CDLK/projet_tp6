@@ -1,5 +1,6 @@
 <header>
   <div class="SearchPanel">
+    <h1>Les Halles Du Web</h1>
     <form class="" action="" method="post">
       <p>Categories :
       <select class="" name="Categories">
