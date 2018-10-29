@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="mainPage.style.css">
+    <link rel="stylesheet" href="style/mainPage.style.css">
     <title>Test Les Halles du Web</title>
   </head>
   <body>
