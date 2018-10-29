@@ -25,7 +25,7 @@ function getAllCats() : array {
     try{
       if($d = $this->db->query($req)){
         //PDO::FETCH_CLASS,'Categorie'
-        $tab=$d->fetchAll(PDO::FETCH_CLASS,'Categorie', array('id','intitule','pere'));
+        $tab=$d->fetchAll(PDO::FETCH_CLASS,'Categorie');
       }
     }catch(Exception $e){
       echo "error au niveau du getAllCat ".$e;
@@ -62,7 +62,7 @@ function getAllUsers() : array {
     return $tab;
   }
 
-function getAllRegion() : array {
+function getAllRegions() : array {
     $tab = array();
     $req = "SELECT * FROM region";
     try{
@@ -73,7 +73,7 @@ function getAllRegion() : array {
       echo "error au niveau du getAllregion".$e;
       return NULL;
     }
-    return $tab[0];
+    return $tab;
 }
 
 
@@ -107,7 +107,7 @@ function searchOffreRegion() : array {
 }
 
 // cherche les categorie mère tel que produit
-function searchCatMaman() : array{
+function searchCatMere() : array{
   $tab = array();
   $rep = "SELECT * FROM categorie WHERE id = pere";
   try{
@@ -120,6 +120,23 @@ function searchCatMaman() : array{
     }
     return $tab;
 }
+
+// cherche les categories ayant pour pere cat
+function searchCatFille($cat) : array{
+  $tab = array();
+  $rep = "SELECT * FROM categorie WHERE id = $cat";
+  try{
+      if($d = $this->db->query($req)){
+        $tab=$d->fetchAll();
+      }
+    }catch(Exception $e){
+      echo "error au niveau du searchCatMaman".$e;
+      return NULL;
+    }
+    return $tab;
+}
+
+
 //recherche par offre/region/categorie
 function searchORC($region, $categorie) : array{
   $tab = array();
