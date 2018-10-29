@@ -4,17 +4,17 @@
       <p>Categories :
       <select class="" name="Categories">
         <?php  foreach ($categorie as $categories => $value) { ?>
-          <option value="<?= echo $value ?>"><?= echo $value ?></option>
-        <?= } ?>
+          <option value="<?php echo $value ?>"><?php echo $value ?></option>
+        <?php } ?>
       </select>
       Region :
       <select class="" name="Region">
         <?php  foreach ($region as $regions => $value) { ?>
-          <option value="<?= echo $value ?>"><?= echo $value ?></option>
-        <?= } ?>
+          <option value="<?php echo $value ?>"><?php echo $value ?></option>
+        <?php } ?>
       </select>
       <input type="submit" name="Rechercher" value="Rechercher">
-      </p>
+    </p>
     </form>
   </div>
   <div class="PersonnalPanel">

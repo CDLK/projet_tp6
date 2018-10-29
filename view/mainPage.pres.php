@@ -1,4 +1,4 @@
-<?php phpinfo(); ?>
+<!-- <?php //phpinfo(); ?> -->
 <html>
   <head>
     <meta charset="utf-8">
