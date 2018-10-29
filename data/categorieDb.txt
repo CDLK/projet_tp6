@@ -1,4 +1,6 @@
-1|Produit|1
-2|Bricolage|1
-3|Jardinage|2
-4|Outils|2
+1|Bricolage|1
+2|Jardinage|1
+3|Outils|1
+4|Multimédia|4
+5|Smartphones|4
+6|Informatique|4

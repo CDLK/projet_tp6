@@ -7,6 +7,9 @@
   <body>
     <?php include('../controleur/header.ctrl.php'); ?>
     <nav>
+      <?php if(!isset($catMeres)){
+        echo "<p>lol</p>";
+      } ?>
       <?php foreach ($catMeres as $catM) {
         $catFilles = $dao->getCatFille($catM->__get('id'));?>
         <div class="Categorie">
@@ -14,7 +17,7 @@
           <div class="">
             <ul>
             <?php foreach ($catFilles as $catF) {?>
-                  <li><a href="#"><p><?php $catF->__get('intitule') ?></p></a></li>
+                  <li><a href="#"><p><?php echo $catF->__get('intitule') ?></p></a></li>
             <?php } ?>
             </ul>
           </div>

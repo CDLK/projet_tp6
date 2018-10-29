@@ -1,5 +1,5 @@
 1|1.jpg|bible|5.99|Rhône-Alpes|Dieuestparminous,ditesvospéchés|1|1
 2|2.jpg|hache|69.99|Rhône-Alpes|coupetrèsbien|1|3
-3|3.jpg|marteau|20.99|Rhône-Alpes|ecrasebien|2|4
-4|4.jpg|marteaupiqueur|259.99|Rhône-Alpes|fendlebéton|3|4
-5|5.jpg|marteaupiqueur|350.99|Rhône-Alpes|fendextremementbienlebéton|2|4
+3|3.jpg|marteau|20.99|Rhône-Alpes|ecrasebien|2|3
+4|4.jpg|marteaupiqueur|259.99|Rhône-Alpes|fendlebéton|2|3
+5|5.jpg|marteaupiqueur|350.99|Rhône-Alpes|fendextremementbienlebéton|2|3

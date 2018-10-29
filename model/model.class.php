@@ -3,7 +3,7 @@
 class Offre{
 
   private $ref;
-  private $photo; //bien mettre le image de la même taille
+  private $photo;
   private $intitule;
   private $prix;
   private $region;
@@ -34,14 +34,10 @@ class Offre{
   //   assert(isset($this->categorie));
   // }
 
-
 //////////////////////////////////////////////////////////////////
   // Getter : on en déclare qu'un seul pour tous les acces
   //////////////////////////////////////////////////////////////////
 public function __get(string $property) {
-    ///////////////////////////////////////////////////////////////////////////
-    // COMPLETER LE RETOUR DU GETTER GENERIQUE
-    ///////////////////////////////////////////////////////////////////////////
     return $this->$property;
     //car dans le test on fait a->...
     //et le attribut sont en private
@@ -113,16 +109,8 @@ class Categorie{
   //   assert(isset($this->pere));
   // }
 
-  //////////////////////////////////////////////////////////////////
-    // Getter : on en déclare qu'un seul pour tous les acces
-    //////////////////////////////////////////////////////////////////
   public function __get(string $property) {
-      ///////////////////////////////////////////////////////////////////////////
-      // COMPLETER LE RETOUR DU GETTER GENERIQUE
-      ///////////////////////////////////////////////////////////////////////////
       return $this->$property;
-      //car dans le test on fait a->...
-      //et le attribut sont en private
     }
 
 }
@@ -134,11 +122,4 @@ class Region{
       return $this->nom;
     }
 }
-
-
-
-
-
-
-
  ?>

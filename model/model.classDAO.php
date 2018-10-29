@@ -93,9 +93,9 @@ function search($name) : array{
 }
 
 //recherche les produits par region
-function searchOffreRegion() : array {
+function searchOffreRegion($region) : array {
   $tab = array();
-  $rep = "SELECT * FROM produit p, offre o WHERE p.region = o.region";
+  $req = "SELECT * FROM offre WHERE region = $region";
   try{
       if($d = $this->db->query($req)){
         $tab=$d->fetchAll();
@@ -110,13 +110,13 @@ function searchOffreRegion() : array {
 // cherche les categorie mère tel que produit
 function getCatMere() : array{
   $tab = array();
-  $rep = "SELECT * FROM categorie WHERE id = 1";
+  $req = 'SELECT * FROM categorie c WHERE id = pere';
   try{
       if($d = $this->db->query($req)){
         $tab=$d->fetchAll(PDO::FETCH_CLASS,'Categorie');
       }
     }catch(Exception $e){
-      echo "error au niveau du searchCatMaman".$e;
+      echo "error au niveau du getCatMaman".$e;
       return NULL;
     }
     return $tab;
@@ -125,7 +125,7 @@ function getCatMere() : array{
 // cherche les categories ayant pour pere cat
 function getCatFille($cat) : array{
   $tab = array();
-  $rep = "SELECT * FROM categorie WHERE id = $cat";
+  $req = "SELECT * FROM categorie WHERE pere = $cat AND id != $cat";
   try{
       if($d = $this->db->query($req)){
         $tab=$d->fetchAll(PDO::FETCH_CLASS
@@ -142,7 +142,7 @@ function getCatFille($cat) : array{
 //recherche par offre/region/categorie
 function searchORC($region, $categorie) : array{
   $tab = array();
-  $rep = "SELECT * FROM offre o, region r, categorie c WHERE o.region=$region->nom AND o.categorie=$categorie->id";
+  $req = "SELECT * FROM offre WHERE region=$region AND categorie=$categorie";
   try{
       if($d = $this->db->query($req)){
         $tab=$d->fetchAll();
@@ -153,35 +153,6 @@ function searchORC($region, $categorie) : array{
     }
     return $tab;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
  ?>
