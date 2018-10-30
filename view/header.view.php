@@ -4,12 +4,14 @@
     <form class="" action="" method="post">
       <p>Categories :
       <select class="" name="Categories">
+        <option value="">Toutes categories</option>
         <?php  foreach ($categories as $categorie) { ?>
           <option value="<?php echo $categorie->__get('intitule') ?>"><?php echo $categorie->__get('intitule') ?></option>
         <?php } ?>
       </select>
       Region :
       <select class="" name="Region">
+        <option value="">Toute la France</option>
         <?php  foreach ($regions as $region) { ?>
           <option value="<?php echo $region->getNom() ?>"><?php echo $region->getNom() ?></option>
         <?php } ?>

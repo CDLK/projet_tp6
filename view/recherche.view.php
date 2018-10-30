@@ -7,10 +7,10 @@
   <body>
     <?php include('header.view.php'); ?>
     <nav>
-      <?php foreach ($offre as $offres => $value) { // Affichage de chaque offre dans la recherche?>
+      <?php foreach ($offres as $offre) { // Affichage de chaque offre dans la recherche?>
         <a href="#">
         <div class="Offre">
-          <img src="" alt="">
+          <img src="<?php echo ?>" alt="">
           <div >
             <h4><?=echo $offre->intitule?></h4>
             <p><?=echo $offre->description?></p>
