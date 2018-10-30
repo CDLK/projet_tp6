@@ -162,6 +162,29 @@ function getNOffreCorespondante($firstId, $region, $categorie) : array{
     return $tab;
 }
 
+function getNbOffreRec($region, $categorie) {
+  if($region=='Toute' && $categorie=='Toute'){
+    $where = " ";
+  }elseif($region!='Toute' && $categorie!='Toute'){
+    $where = "WHERE region = \"$region\" AND categorie = $categorie";
+  }elseif($region!='Toute' && $categorie=='Toute'){
+    $where = "WHERE region = \"$region\"";
+  }elseif($region=='Toute' && $categorie!='Toute'){
+    $where = "WHERE categorie = $categorie";
+  }
+
+  $req = "SELECT COUNT(*) as count FROM offre $where";
+  try{
+      if($d = $this->db->query($req)){
+        $nb=$d->fetch();
+      }
+    }catch(Exception $e){
+      echo "error au niveau du searchORC".$e;
+      return NULL;
+    }
+    return (int)$nb["count"];
+}
+
 //recherche par offre/region/categorie
 function searchORC($region, $categorie) : array{
   $tab = array();
@@ -176,6 +199,8 @@ function searchORC($region, $categorie) : array{
     }
     return $tab;
 }
+
+
 
 }
  ?>

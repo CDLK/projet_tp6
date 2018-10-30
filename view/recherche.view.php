@@ -8,8 +8,12 @@
   <body>
     <?php include('../controleur/header.ctrl.php'); ?>
     <nav>
+      <?php  if (sizeof($offres)==0) {?>
+        <p>Aucune offre ne correspond à votre recherche</p>
+      <?php } ?>
+
       <?php foreach ($offres as $offre) { // Affichage de chaque offre dans la recherche?>
-        <a href="../controleur/offre.ctrl.php?<?php echo $offre->__get('ref')?>">
+        <a href="../controleur/offre.ctrl.php?ref=<?php echo $offre->__get('ref')?>">
         <div class="Offre">
           <img src="<?php echo $config['img_path']."/".$offre->__get('photo') ?>" alt="">
           <div >

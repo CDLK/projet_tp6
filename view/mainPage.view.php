@@ -13,11 +13,11 @@
       <?php foreach ($catMeres as $catM) {
         $catFilles = $dao->getCatFille($catM->__get('id'));?>
         <div class="Categorie">
-          <h3><?php echo $catM->__get('intitule') ?></h3>
+          <a href="../controleur/recherche.ctrl.php?c=<?php echo $catM->__get('id') ?>"><h3><?php echo $catM->__get('intitule') ?></h3></a>
           <div class="">
             <ul>
             <?php foreach ($catFilles as $catF) {?>
-                  <li><a href="#"><p><?php echo $catF->__get('intitule') ?></p></a></li>
+                  <li><a href="../controleur/recherche.ctrl.php?c=<?php echo $catF->__get('id') ?>"><p><?php echo $catF->__get('intitule') ?></p></a></li>
             <?php } ?>
             </ul>
           </div>

@@ -1,6 +1,6 @@
 <header>
   <div class="SearchPanel">
-    <h1>Les Halles Du Web</h1>
+    <a href="../controleur/mainPage.ctrl.php"><h1>Les Halles Du Web</h1></a>
     <form class="" action="../controleur/recherche.ctrl.php" method="get">
       <p>Categories :
       <select class="" name="c">
