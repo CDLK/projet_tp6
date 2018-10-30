@@ -10,7 +10,7 @@
     <nav>
       <?php  if (sizeof($offres)==0) {?>
         <p>Aucune offre ne correspond à votre recherche</p>
-      <?php } ?>
+      <?php } else {?>
 
       <?php foreach ($offres as $offre) { // Affichage de chaque offre dans la recherche?>
         <a href="../controleur/offre.ctrl.php?ref=<?php echo $offre->__get('ref')?>">
@@ -24,11 +24,16 @@
         </div>
         </a>
       <?php  }?>
+      <?php if ($nboffre > $firstId+10) {?>
+        <div class="Fleche">
+          <?php if ($firstId!=0) {?>
+            <a href="../controleur/recherche.ctrl.php?firstId=<?php echo $firstId-10 ?>"><img src="../data/imgSite/F_Gauche.jpg" alt=""></a>
+          <?php } ?>
+          <a href="../controleur/recherche.ctrl.php?firstId=<?php echo $firstId+10 ?>"><img src="../data/imgSite/F_Droite.jpg" alt=""></a>
+        </div>
+      <?php } ?>
+      <?php }?>
     </nav>
-    <div class="">
-      <a href=""><img src="" alt=""></a>
-      <a href=""><img src="" alt=""></a>
-    </div>
     <?php include('footer.view.php'); ?>
   </body>
 </html>

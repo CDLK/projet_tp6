@@ -184,23 +184,5 @@ function getNbOffreRec($region, $categorie) {
     }
     return (int)$nb["count"];
 }
-
-//recherche par offre/region/categorie
-function searchORC($region, $categorie) : array{
-  $tab = array();
-  $req = "SELECT * FROM offre WHERE region=$region AND categorie=$categorie";
-  try{
-      if($d = $this->db->query($req)){
-        $tab=$d->fetchAll();
-      }
-    }catch(Exception $e){
-      echo "error au niveau du searchORC".$e;
-      return NULL;
-    }
-    return $tab;
-}
-
-
-
 }
  ?>

@@ -40,6 +40,16 @@ nav img {
   height: 150px;
 }
 
+nav div.Fleche img{
+  width: 30px;
+  height: 30px;
+}
+
+div.Fleche {
+  background-color: #e6e9f0;
+}
+
+
 nav div {
 
   color: gray;

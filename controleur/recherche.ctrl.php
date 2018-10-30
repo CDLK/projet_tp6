@@ -26,8 +26,7 @@ require_once('../model/model.classDAO.php');
   // $precId = ($precId == 0 ? 1 : $precId);
 
   $offres = $dao->getNOffreCorespondante($firstId,$region,$categorie);
-
-
+  $nboffre = $dao->getNbOffreRec($region,$categorie);
 
 
   include('../view/recherche.view.php');
