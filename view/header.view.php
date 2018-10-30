@@ -1,22 +1,22 @@
 <header>
   <div class="SearchPanel">
     <h1>Les Halles Du Web</h1>
-    <form class="" action="" method="post">
+    <form class="" action="../controleur/recherche.ctrl.php" method="get">
       <p>Categories :
-      <select class="" name="Categories">
-        <option value="">Toutes categories</option>
+      <select class="" name="c">
+        <option value="Toute">Toutes categories</option>
         <?php  foreach ($categories as $categorie) { ?>
-          <option value="<?php echo $categorie->__get('intitule') ?>"><?php echo $categorie->__get('intitule') ?></option>
+          <option value="<?php echo $categorie->__get('id') ?>"><?php echo $categorie->__get('intitule') ?></option>
         <?php } ?>
       </select>
       Region :
-      <select class="" name="Region">
-        <option value="">Toute la France</option>
+      <select class="" name="r">
+        <option value="Toute">Toute la France</option>
         <?php  foreach ($regions as $region) { ?>
           <option value="<?php echo $region->getNom() ?>"><?php echo $region->getNom() ?></option>
         <?php } ?>
       </select>
-      <input type="submit" name="Rechercher" value="Rechercher">
+      <input type="submit" name="" value="Rechercher">
     </p>
     </form>
   </div>

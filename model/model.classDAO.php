@@ -110,7 +110,7 @@ function searchOffreRegion($region) : array {
 // cherche les categorie mère tel que produit
 function getCatMere() : array{
   $tab = array();
-  $req = 'SELECT * FROM categorie c WHERE id = pere';
+  $req = 'SELECT * FROM categorie WHERE id = pere';
   try{
       if($d = $this->db->query($req)){
         $tab=$d->fetchAll(PDO::FETCH_CLASS,'Categorie');
@@ -138,6 +138,29 @@ function getCatFille($cat) : array{
     return $tab;
 }
 
+function getNOffreCorespondante($firstId, $region, $categorie) : array{
+  $tab = array();
+  if($region=='Toute' && $categorie=='Toute'){
+    $where = " ";
+  }elseif($region!='Toute' && $categorie!='Toute'){
+    $where = "WHERE region = \"$region\" AND categorie = $categorie";
+  }elseif($region!='Toute' && $categorie=='Toute'){
+    $where = "WHERE region = \"$region\"";
+  }elseif($region=='Toute' && $categorie!='Toute'){
+    $where = "WHERE categorie = $categorie";
+  }
+
+  $req = "SELECT * FROM offre $where LIMIT 10 Offset $firstId";
+  try{
+      if($d = $this->db->query($req)){
+        $tab=$d->fetchAll(PDO::FETCH_CLASS,'Offre');
+      }
+    }catch(Exception $e){
+      echo "error au niveau du searchORC".$e;
+      return NULL;
+    }
+    return $tab;
+}
 
 //recherche par offre/region/categorie
 function searchORC($region, $categorie) : array{

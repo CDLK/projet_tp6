@@ -2,25 +2,29 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../view/style/recherche.style.css">
     <title>Les Halles du Web</title>
   </head>
   <body>
-    <?php include('header.view.php'); ?>
+    <?php include('../controleur/header.ctrl.php'); ?>
     <nav>
       <?php foreach ($offres as $offre) { // Affichage de chaque offre dans la recherche?>
-        <a href="#">
+        <a href="../controleur/offre.ctrl.php?<?php echo $offre->__get('ref')?>">
         <div class="Offre">
-          <img src="<?php echo ?>" alt="">
+          <img src="<?php echo $config['img_path']."/".$offre->__get('photo') ?>" alt="">
           <div >
-            <h4><?=echo $offre->intitule?></h4>
-            <p><?=echo $offre->description?></p>
+            <h4><?php echo $offre->__get('intitule')?></h4>
+            <p class="prix"><?php echo $offre->__get('prix')?>€</p>
+            <p><?php echo $offre->__get('region')?></p>
           </div>
         </div>
         </a>
       <?php  }?>
     </nav>
-    <a href=""></a>
-    <a href=""></a>
+    <div class="">
+      <a href=""><img src="" alt=""></a>
+      <a href=""><img src="" alt=""></a>
+    </div>
     <?php include('footer.view.php'); ?>
   </body>
 </html>
