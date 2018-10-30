@@ -4,3 +4,17 @@
 4|Multimédia|4
 5|Smartphones|4
 6|Informatique|4
+7|Véhicules|7
+8|Voitures|7
+9|Motos|7
+10|Caravane|7
+11|Loisirs|11
+12|DVD|11
+13|CD|11
+14|Livres|11
+15|Consoles|4
+16|Jeux vidéo|11
+17|Maison|17
+18|Ameublement|17
+19|Électroménager|17
+20|Décoration|17

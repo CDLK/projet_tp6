@@ -25,7 +25,7 @@ AGE INTEGER,
 mdp TEXT,
 region TEXT,
 mail TEXT,
-TELEPHONE INTEGER,
+telephone INTEGER,
 FOREIGN KEY (region) REFERENCES region(nom)
 );
 

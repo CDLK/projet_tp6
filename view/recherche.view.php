@@ -12,8 +12,8 @@
         <p>Aucune offre ne correspond à votre recherche</p>
       <?php } else {?>
 
-      <?php foreach ($offres as $offre) { // Affichage de chaque offre dans la recherche?>
-        <a href="../controleur/offre.ctrl.php?ref=<?php echo $offre->__get('ref')?>">
+      <?php foreach ($offres as $offre) { ?>
+        <a href="../controleur/offre.ctrl.php?ref=<?php echo $offre->__get('ref')?>&r=<?php echo $reg ?>&c=<?php echo $cate?>">
         <div class="Offre">
           <img src="<?php echo $config['img_path']."/".$offre->__get('photo') ?>" alt="">
           <div >

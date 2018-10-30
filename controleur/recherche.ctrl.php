@@ -8,14 +8,14 @@ require_once('../model/model.classDAO.php');
     $firstId = 0;
   }
   if (isset($_GET['r'])) {
-    $region = $_GET['r'];
+    $reg = $_GET['r'];
   } else {
-    $region = "Toute";
+    $reg = "Toute";
   }
   if (isset($_GET['c'])) {
-    $categorie = $_GET['c'];
+    $cate = $_GET['c'];
   } else {
-    $categorie = "Toute";
+    $cate = "Toute";
   }
 
   $config = parse_ini_file('../config/config.ini');
@@ -25,8 +25,8 @@ require_once('../model/model.classDAO.php');
   // $precId = (isset($_GET['firstId']) && $_GET['firstId'] != 1? $_GET['firstId']-10: $nbMusic-($nbMusic%10));
   // $precId = ($precId == 0 ? 1 : $precId);
 
-  $offres = $dao->getNOffreCorespondante($firstId,$region,$categorie);
-  $nboffre = $dao->getNbOffreRec($region,$categorie);
+  $offres = $dao->getNOffreCorespondante($firstId,$reg,$cate);
+  $nboffre = $dao->getNbOffreRec($reg,$cate);
 
 
   include('../view/recherche.view.php');
