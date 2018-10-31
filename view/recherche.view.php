@@ -26,10 +26,10 @@
       <?php  }?>
         <div class="Fleche">
           <?php if ($firstId!=0) {?>
-            <a href="../controleur/recherche.ctrl.php?firstId=<?php echo $firstId-10 ?>"><img src="../data/imgSite/F_Gauche.jpg" alt=""></a>
+            <a href="../controleur/recherche.ctrl.php?firstId=<?php echo $firstId-10 ?>&r=<?php echo $reg ?>&c=<?php echo $cate?>"><img src="../data/imgSite/F_Gauche.jpg" alt=""></a>
           <?php } ?>
           <?php if ($nboffre > $firstId+10) {?>
-          <a href="../controleur/recherche.ctrl.php?firstId=<?php echo $firstId+10 ?>"><img src="../data/imgSite/F_Droite.jpg" alt=""></a>
+          <a href="../controleur/recherche.ctrl.php?firstId=<?php echo $firstId+10 ?>&r=<?php echo $reg ?>&c=<?php echo $cate?>"><img src="../data/imgSite/F_Droite.jpg" alt=""></a>
           <?php } ?>
         </div>
       <?php }?>
