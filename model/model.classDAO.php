@@ -24,7 +24,6 @@ function getAllCats() : array {
     $req = "SELECT * FROM categorie";
     try{
       if($d = $this->db->query($req)){
-        //PDO::FETCH_CLASS,'Categorie'
         $tab=$d->fetchAll(PDO::FETCH_CLASS,'Categorie');
       }
     }catch(Exception $e){
@@ -209,5 +208,53 @@ function getVendeur($id) {
     }
     return $vendeur[0];
 }
+function validUser($mail,$mdp) {
+  $req = "SELECT * FROM utilisateur WHERE mail =\"$mail\" AND mdp =\"$mdp\"";
+  try{
+      if($d = $this->db->query($req)){
+        $user=$d->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
+      }
+    }catch(Exception $e){
+      echo "error au niveau du searchORC".$e;
+      return NULL;
+    }
+    if (isset($user[0])) {
+      $id = $user[0]->__get('identifiant');
+    } else {
+      $id = 0;
+    }
+    return (int)$id;
+}
+
+  function validMail($mail) {
+    $req = "SELECT * FROM utilisateur WHERE mail =\"$mail\"";
+    try{
+        if($d = $this->db->query($req)){
+          $user=$d->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
+        }
+      }catch(Exception $e){
+        echo "error au niveau du searchORC".$e;
+        return NULL;
+      }
+      if (isset($user[0])) {
+        $b = true;
+      } else {
+        $b = false;
+      }
+      return (bool)$b;
+  }
+
+  function getUser($id) {
+    $req = "SELECT * FROM utilisateur WHERE identifiant = $id";
+    try{
+        if($d = $this->db->query($req)){
+          $user=$d->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
+        }
+      }catch(Exception $e){
+        echo "error au niveau du searchORC".$e;
+        return NULL;
+      }
+      return $user[0];
+  }
 }
  ?>

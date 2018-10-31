@@ -21,7 +21,7 @@
     </form>
   </div>
   <div class="PersonnalPanel">
-    <a href="pageConnection.html"><p>Se connecter</p></a>
+    <a href="../controleur/connection.ctrl.php"><p>Se connecter</p></a>
     <a href="pageConnection.html"><p>Creer Un Compte</p></a>
   </div>
 </header>
