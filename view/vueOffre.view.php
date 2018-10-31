@@ -8,7 +8,7 @@
   <body>
     <?php include('../controleur/header.ctrl.php'); ?>
     <nav>
-      <form action="../controleur/recherche.ctrl.php?firstId=<?php echo $firstId ?>&c=<?php echo $cate ?>&r=<?php echo $reg?>" method="post">
+      <form action=<?php if(isset($_GET['fromC'])){print("\"../controleur/compte.ctrl.php\"");} else {print("\"../controleur/recherche.ctrl.php?firstId=$firstId&c=$cate&r=$reg\"");}?> method="post">
         <input type="submit" value="retour">
       </form>
       <div class="Offre">

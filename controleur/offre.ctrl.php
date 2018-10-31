@@ -4,6 +4,11 @@
 
     $config = parse_ini_file('../config/config.ini');
 
+    session_start();
+    if(isset($_GET['deco'])){
+      session_destroy();
+    }
+
     if (isset($_GET['firstId'])) {
       $firstId = $_GET['firstId'];
     } else {

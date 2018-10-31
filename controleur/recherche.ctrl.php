@@ -2,6 +2,11 @@
 require_once('../model/model.class.php');
 require_once('../model/model.classDAO.php');
 
+  session_start();
+  if(isset($_GET['deco'])){
+    session_destroy();
+  }
+
   if (isset($_GET['firstId'])) {
     $firstId = $_GET['firstId'];
   } else {
@@ -19,11 +24,6 @@ require_once('../model/model.classDAO.php');
   }
 
   $config = parse_ini_file('../config/config.ini');
-
-  //
-  // $nextId = (isset($_GET['firstId']) && $_GET['firstId'] != 1? (($_GET['firstId']+10) >= $nbMusic ? 1: $_GET['firstId']+10): 10);
-  // $precId = (isset($_GET['firstId']) && $_GET['firstId'] != 1? $_GET['firstId']-10: $nbMusic-($nbMusic%10));
-  // $precId = ($precId == 0 ? 1 : $precId);
 
   $offres = $dao->getNOffreCorespondante($firstId,$reg,$cate);
   $nboffre = $dao->getNbOffreRec($reg,$cate);

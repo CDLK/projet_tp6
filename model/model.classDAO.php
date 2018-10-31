@@ -256,5 +256,18 @@ function validUser($mail,$mdp) {
       }
       return $user[0];
   }
+
+  function getOffreUser($id) {
+    $req = "SELECT * FROM offre WHERE id = $id";
+    try{
+        if($d = $this->db->query($req)){
+          $offre=$d->fetchAll(PDO::FETCH_CLASS,'Offre');
+        }
+      }catch(Exception $e){
+        echo "error au niveau du searchORC".$e;
+        return NULL;
+      }
+      return $offre;
+  }
 }
  ?>
