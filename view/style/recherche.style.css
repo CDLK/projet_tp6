@@ -19,6 +19,11 @@ header h1{
   color: black;
 }
 
+header .PersonnalPanel {
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
 nav {
   margin-right: auto;
   margin-left: auto;

@@ -7,6 +7,12 @@
 
     $catMeres = $dao->getCatMere();
 
+    session_start();
+
+    if(isset($_GET['deco'])){
+      session_destroy();
+    }
+
     // var_dump($catMeres);
 
     //$jukebox = new MusicDAO($config['database_path']);

@@ -26,6 +26,12 @@ nav {
   background-color: #e6e9f0;
 }
 
+header .PersonnalPanel {
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+
 a {
   text-decoration: none;
   color: black;

@@ -13,6 +13,11 @@ header div{
   padding: 5px;
 }
 
+header .PersonnalPanel {
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
 a{
   text-decoration: none;
   color: black;
