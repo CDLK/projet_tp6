@@ -13,7 +13,7 @@
       <?php } else {?>
 
       <?php foreach ($offres as $offre) { ?>
-        <a href="../controleur/offre.ctrl.php?ref=<?php echo $offre->__get('ref')?>&r=<?php echo $reg ?>&c=<?php echo $cate?>">
+        <a href="../controleur/offre.ctrl.php?ref=<?php echo $offre->__get('ref')?>&firstId=<?php echo $firstId ?>&r=<?php echo $reg ?>&c=<?php echo $cate?>">
         <div class="Offre">
           <img src="<?php echo $config['img_path']."/".$offre->__get('photo') ?>" alt="">
           <div >
