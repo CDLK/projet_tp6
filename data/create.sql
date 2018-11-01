@@ -7,7 +7,7 @@ Create table offre (
 ref INTEGER PRIMARY KEY,
 photo TEXT,
 intitule TEXT,
-prix FLOAT,
+prix TEXT,
 region TEXT,
 caracteristique TEXT,
 id INTEGER,
@@ -25,7 +25,7 @@ age INTEGER,
 mdp TEXT,
 region TEXT,
 mail TEXT,
-telephone INTEGER,
+telephone TEXT,
 FOREIGN KEY (region) REFERENCES region(nom)
 );
 

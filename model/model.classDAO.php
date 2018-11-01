@@ -293,13 +293,31 @@ function validUser($mail,$mdp) {
                                 'mdp' => $mdp,
                                 'region' => $region,
                                 'mail' => $mail,
-                                'telephone' => (int)$telephone);
+                                'telephone' => $telephone);
     try{
-        var_dump($nouvelleUtilisateur);
         $req->execute($nouvelleUtilisateur);
       }catch(Exception $e){
         echo "error au niveau du creerCompte".$e;
       }
   }
+  function creerOffre($user,$intitule,$prix,$description) {
+    $id = $this->getUserNewId();
+    $req = $this->db->prepare("INSERT INTO utilisateur (identifiant,nomUser,prenomUser,age,mdp,region,mail,telephone) VALUES (:id,:nom,:prenom,:age,:mdp,:region,:mail,:telephone)");
+    $nouvelleUtilisateur = array('id' => (int)$id,
+                                'nom' => $nom,
+                                'prenom' => $prenom,
+                                'age' => (int)$age,
+                                'mdp' => $mdp,
+                                'region' => $region,
+                                'mail' => $mail,
+                                'telephone' => $telephone);
+    try{
+        $req->execute($nouvelleUtilisateur);
+      }catch(Exception $e){
+        echo "error au niveau du creerCompte".$e;
+      }
+  }
+
+
 }
  ?>

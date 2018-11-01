@@ -2,16 +2,15 @@
   require_once('../model/model.class.php');
   require_once('../model/model.classDAO.php');
 
-  if(isset($_POST['Creation'])){
-    if($dao->validMail($_POST['mail'])){
-      $erMail = true;
-    } elseif (!($_POST['mdp']===$_POST['mdpVerif'])){
-      $erMdp = true;
-    } else {
+  session_start();
 
-      $dao->creerOffre($_SESSION['utilisateur'],$_POST['intitule'],$_POST['prix'],$_POST['caracteristique']);
-      header('Location: ../controleur/compte.ctrl.php?Offr=1');
-    }
+  if(isset($_POST['NouvelleOffre'])){
+    var_dump();
+
+
+    $dao->creerOffre($_SESSION['utilisateur'],$_POST['intitule'],$_POST['prix'],$_POST['description']);
+
+    header('Location: ../controleur/compte.ctrl.php?Offr=1');
   } else {
     $erMail = false;
     $erMdp = false;
@@ -35,5 +34,5 @@
 
     $config = parse_ini_file('../config/config.ini');
 
-    include('../view/creaCompte.view.php');
+    include('../view/creaOffre.view.php');
  ?>
