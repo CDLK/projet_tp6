@@ -269,5 +269,37 @@ function validUser($mail,$mdp) {
       }
       return $offre;
   }
+
+  function getUserNewId() {
+    $req = "SELECT MAX(identifiant) FROM utilisateur";
+    try{
+        if($d = $this->db->query($req)){
+          $max=$d->fetch();
+        }
+      }catch(Exception $e){
+        echo "error au niveau du searchORC".$e;
+        return NULL;
+      }
+      return (int)($max[0]+1);
+  }
+
+  function creerCompte($nom,$prenom,$age,$mdp,$region,$mail,$telephone) {
+    $id = $this->getUserNewId();
+    $req = $this->db->prepare("INSERT INTO utilisateur (identifiant,nomUser,prenomUser,age,mdp,region,mail,telephone) VALUES (:id,:nom,:prenom,:age,:mdp,:region,:mail,:telephone)");
+    $nouvelleUtilisateur = array('id' => (int)$id,
+                                'nom' => $nom,
+                                'prenom' => $prenom,
+                                'age' => (int)$age,
+                                'mdp' => $mdp,
+                                'region' => $region,
+                                'mail' => $mail,
+                                'telephone' => (int)$telephone);
+    try{
+        var_dump($nouvelleUtilisateur);
+        $req->execute($nouvelleUtilisateur);
+      }catch(Exception $e){
+        echo "error au niveau du creerCompte".$e;
+      }
+  }
 }
  ?>

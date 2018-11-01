@@ -10,7 +10,7 @@ $offre = $dao->getAllOffres();
 $region = $dao->getAllRegions();
 
 // Affiche 2 catégories pour le test : affiche le pere d'une catégorie
-  var_dump($cat);
+  // var_dump($cat);
   var_dump($user);
-  var_dump($offre);
+  // var_dump($offre);
  ?>

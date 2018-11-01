@@ -21,7 +21,7 @@ Create table utilisateur (
 identifiant INTEGER PRIMARY KEY,
 nomUser TEXT,
 prenomUser TEXT,
-AGE INTEGER,
+age INTEGER,
 mdp TEXT,
 region TEXT,
 mail TEXT,
