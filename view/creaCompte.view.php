@@ -27,7 +27,7 @@
                 <option value=<?php print("\"".$_POST['age']."\"");  ?>><?php echo $_POST['age'] ?></option>
               <?php }?>
               <?php  for($i = 18; $i<100; $i++) { ?>
-                <?php if ((($erMdp || $erMail) && $_POST['age'] != $i) || (!$erMdp || !$erMail)) {?>
+                <?php if ((($erMdp || $erMail) && $_POST['age'] != $i) || (!$erMdp && !$erMail)) {?>
                 <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                 <?php } ?>
               <?php } ?>
@@ -53,7 +53,7 @@
                 <option value=<?php print("\"".$_POST['region']."\"");  ?>><?php echo $_POST['region'] ?></option>
               <?php }?>
               <?php  foreach ($regions as $region) { ?>
-                <?php if ((($erMdp || $erMail) && $_POST['region'] != $region->getNom()) || (!$erMdp || !$erMail)) {?>
+                <?php if ((($erMdp || $erMail) && $_POST['region'] != $region->getNom()) || (!$erMdp && !$erMail)) {?>
                   <option value="<?php echo $region->getNom() ?>"><?php echo $region->getNom() ?></option>
                 <?php } ?>
               <?php } ?>
