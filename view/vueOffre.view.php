@@ -17,9 +17,6 @@
             <input type="submit" value="Supprimer offre">
           </form>
         <?php } ?>
-        <form class="" action="index.html" method="post">
-
-        </form>
       </div>
       <div class="Offre">
         <img src="<?php echo $config['img_path']."/".$offre->__get('photo') ?>" alt="">

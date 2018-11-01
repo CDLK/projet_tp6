@@ -7,9 +7,14 @@ $config = parse_ini_file('../config/config.ini');
 session_start();
 
 if(isset($_SESSION['utilisateur'])){
+  if(isset($_GET['suppr'])){
+    $dao->supprOffre($_GET['suppr']);
+  }
   $userCo = true;
   $user = $_SESSION['utilisateur'];
   $mesOffre = $dao->getOffreUser($user->__get('identifiant'));
+
+
 } else {
   $userCo = false;
 }

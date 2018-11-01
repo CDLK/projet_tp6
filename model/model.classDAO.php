@@ -360,6 +360,17 @@ function validUser($mail,$mdp) {
       }
   }
 
+  function supprOffre($ref) {
+        $offre = $this->getOffre($ref);
+        unlink("../data/imgOffre/".$offre->__get('photo'));
+        $req = "DELETE FROM offre WHERE ref = $ref";
+    try{
+        $this->db->exec($req);
+      }catch(Exception $e){
+        echo "error au niveau du supprOffre".$e;
+      }
+  }
+
 
 }
  ?>
