@@ -9,8 +9,8 @@
       $erMdp = true;
     } else {
 
-      $dao->creerCompte($_POST['nom'],$_POST['prenom'],$_POST['age'],$_POST['mdp'],$_POST['region'],$_POST['mail'],$_POST['telephone']);
-      //header('Location: ../controleur/connection.ctrl.php?Inscr=1');
+      $dao->creerOffre($_SESSION['utilisateur'],$_POST['intitule'],$_POST['prix'],$_POST['caracteristique']);
+      header('Location: ../controleur/compte.ctrl.php?Offr=1');
     }
   } else {
     $erMail = false;

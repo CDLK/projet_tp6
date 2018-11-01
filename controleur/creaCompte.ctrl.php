@@ -10,7 +10,7 @@
     } else {
 
       $dao->creerCompte($_POST['nom'],$_POST['prenom'],$_POST['age'],$_POST['mdp'],$_POST['region'],$_POST['mail'],$_POST['telephone']);
-      //header('Location: ../controleur/connection.ctrl.php?Inscr=1');
+      header('Location: ../controleur/connection.ctrl.php?Inscr=1');
     }
   } else {
     $erMail = false;
