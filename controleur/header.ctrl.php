@@ -2,7 +2,7 @@
 require_once('../model/model.class.php');
 require_once('../model/model.classDAO.php');
 
-$categories = $dao->getAllCats();
+$categories = $dao->getAllCatFille();
 $regions = $dao->getAllRegions();
 
 session_start();

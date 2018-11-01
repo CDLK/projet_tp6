@@ -34,6 +34,7 @@ nav {
   margin-left: auto;
   width: 50%;
   background-color: #e6e9f0;
+  border: solid gray 2px;
 }
 nav div {
   height: auto;
@@ -41,6 +42,10 @@ nav div {
   margin-left: auto;
   border-top: 3px;
   background-color: #e6e9f0;
+}
+
+nav div h3 {
+  border-bottom: solid gray 1px;
 }
 
 footer {

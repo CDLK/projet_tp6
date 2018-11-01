@@ -4,16 +4,30 @@
     <form class="" action="../controleur/recherche.ctrl.php" method="get">
       <p>Categories :
       <select class="" name="c">
-        <option value="Toute">Toutes categories</option>
+        <?php if (isset($_GET['c']) && $_GET['c']!='Toute') {?>
+          <option value=<?php print("\"".$_GET['c']."\"");  ?>><?php echo $dao->getCatFromId($_GET['c'])->__get('intitule') ?></option>
+          <option value="Toute">Toutes categories</option>
+        <?php } else {?>
+          <option value="Toute">Toutes categories</option>
+        <?php }?>
         <?php  foreach ($categories as $categorie) { ?>
-          <option value="<?php echo $categorie->__get('id') ?>"><?php echo $categorie->__get('intitule') ?></option>
+          <?php if ((isset($_GET['c']) && $_GET['c'] != $categorie->__get('id')) || (!isset($_GET['c']))) {?>
+              <option value="<?php echo $categorie->__get('id') ?>"><?php echo $categorie->__get('intitule') ?></option>
+          <?php } ?>
         <?php } ?>
       </select>
       Region :
       <select class="" name="r">
-        <option value="Toute">Toute la France</option>
+        <?php if (isset($_GET['r']) && $_GET['r']!='Toute') {?>
+          <option value=<?php print("\"".$_GET['r']."\"");  ?>><?php echo $_GET['r'] ?></option>
+          <option value="Toute">Toute la France</option>
+        <?php } else {?>
+          <option value="Toute">Toute la France</option>
+        <?php }?>
         <?php  foreach ($regions as $region) { ?>
-          <option value="<?php echo $region->getNom() ?>"><?php echo $region->getNom() ?></option>
+          <?php if ((isset($_GET['r']) && $_GET['r'] != $region->getNom()) || (!isset($_GET['r']))) {?>
+            <option value="<?php echo $region->getNom() ?>"><?php echo $region->getNom() ?></option>
+          <?php } ?>
         <?php } ?>
       </select>
       <input type="submit" name="" value="Rechercher">
