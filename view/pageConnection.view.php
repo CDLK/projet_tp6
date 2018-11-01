@@ -12,6 +12,9 @@
         <p>Vous êtes déjà connecté !</p>
       <?php } else {?>
         <div class="connection">
+          <?php if (isset($_GET['Inscr'])) {?>
+            <h3 class="Inscr">Creation du compte effectuer vous pouvez vous connecter !</h3>
+          <?php } ?>
           <h3>Connection :</h3>
           <form action="<?php  echo $_SERVER['PHP_SELF']?>" method="post">
             <label for="mail"><b>Mail</b></label>

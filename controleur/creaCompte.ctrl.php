@@ -2,21 +2,20 @@
   require_once('../model/model.class.php');
   require_once('../model/model.classDAO.php');
 
-  if(isset($_POST['Connection'])){
-    $id=$dao->validUser($_POST['mail'],$_POST['mdp']);
-    if($id!=0){
-      session_start();
-      $_SESSION['utilisateur'] = $dao->getUser($id);
-      header('Location: ../controleur/mainPage.ctrl.php');
-    }else{
-      $erCo = true;
-      $validMail = $dao->validMail($_POST['mail']);
-    }
+  if(isset($_POST['Creation'])){
+    if($dao->validMail($_POST['mail'])){
+      $erMail = true;
+    } elseif (!($_POST['mdp']===$_POST['mdpVerif'])){
+      $erMdp = true;
+    } else {
 
+      header('Location: ../controleur/connection.ctrl.php?Inscr=1');
+    }
   } else {
-    $erCo = false;
-    $validMail = true;
+    $erMail = false;
+    $erMdp = false;
   }
+
     if (isset($_GET['firstId'])) {
       $firstId = $_GET['firstId'];
     } else {

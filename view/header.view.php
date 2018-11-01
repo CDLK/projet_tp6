@@ -23,7 +23,7 @@
   <div class="PersonnalPanel">
   <?php if (!$userCo) {?>
       <a href="../controleur/connection.ctrl.php"><p>Se connecter</p></a>
-      <a href="pageConnection.html"><p>Creer Un Compte</p></a>
+      <a href="../controleur/creaCompte.ctrl.php"><p>Creer Un Compte</p></a>
   <?php } else {?>
     <h4><?php print($user->__get('prenomUser')." ".$user->__get('nomUser')) ?></h4>
     <a href="../controleur/compte.ctrl.php"><p>Mon compte</p></a>

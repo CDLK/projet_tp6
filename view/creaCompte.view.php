@@ -16,36 +16,46 @@
           <form action="<?php  echo $_SERVER['PHP_SELF']?>" method="post">
 
             <label for="nom"><b>Nom :</b></label>
-            <input type="text" placeholder="Nom" name="nom" <?php if ($erCo && $validMail) {print("value=".$_POST['mail']." ");} ?>required>
+            <input type="text" placeholder="Nom" name="nom" <?php if ($erMdp || $erMail) {print("value=".$_POST['nom']." ");} ?>required>
 
             <label for="prenom"><b>Prenom :</b></label>
-            <input type="text" placeholder="Prenom" name="prenom" <?php if ($erCo && $validMail) {print("value=".$_POST['mail']." ");} ?>required>
+            <input type="text" placeholder="Prenom" name="prenom" <?php if ($erMdp || $erMail) {print("value=".$_POST['prenom']." ");} ?>required>
 
             <label for="age"><b>Age :</b></label>
             <select name="age">
+              <?php if ($erMdp || $erMail) {?>
+                <option value=<?php print("\"".$_POST['age']."\"");  ?>><?php echo $_POST['age'] ?></option>
+              <?php }?>
               <?php  for($i = 18; $i<100; $i++) { ?>
+                <?php if ((($erMdp || $erMail) && $_POST['age'] != $i) || (!$erMdp || !$erMail)) {?>
                 <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                <?php } ?>
               <?php } ?>
             </select>
-            <?php if (!$validMail) {?>
-              <p class="erreur"></p>
-            <?php } ?>
             <label for="mail"><b>Mail :</b></label>
-            <input type="mail" placeholder="Entrer un mail" name="mail" <?php if ($erCo && $validMail) {print("value=".$_POST['mail']." ");} ?>required>
+            <?php if ($erMail) {?>
+              <p class="erreur">Mail déjà utilisé !</p>
+            <?php } ?>
+            <input type="mail" placeholder="Entrer un mail" name="mail" <?php if ($erMdp && !$erMail) {print("value=".$_POST['mail']." ");} ?>required>
             <label for="mdp"><b>Mot de passe :</b></label>
-            <?php if ($validMail && $erCo) {?>
+            <?php if ($erMdp) {?>
               <p class="erreur">Erreur mots de passe ne correspondant pas !</p>
             <?php } ?>
             <input type="password" placeholder="Entrer mot de passe" name="mdp" required>
             <input type="password" placeholder="Reentrer mot de passe" name="mdpVerif" required>
 
             <label for="telephone"><b>Telephone :</b></label>
-            <input type="text" placeholder="Numéros de téléphone" name="telephone" <?php if ($erCo && $validMail) {print("value=".$_POST['mail']." ");} ?>required>
+            <input type="text" placeholder="Numéros de téléphone" name="telephone" <?php if ($erMdp || $erMail) {print("value=".$_POST['telephone']." ");} ?>required>
 
             <label for="region"><b>Votre region :</b></label>
             <select name="region">
+              <?php if ($erMdp || $erMail) {?>
+                <option value=<?php print("\"".$_POST['region']."\"");  ?>><?php echo $_POST['region'] ?></option>
+              <?php }?>
               <?php  foreach ($regions as $region) { ?>
-                <option value="<?php echo $region->getNom() ?>"><?php echo $region->getNom() ?></option>
+                <?php if ((($erMdp || $erMail) && $_POST['region'] != $region->getNom()) || (!$erMdp || !$erMail)) {?>
+                  <option value="<?php echo $region->getNom() ?>"><?php echo $region->getNom() ?></option>
+                <?php } ?>
               <?php } ?>
             </select>
             <button name="Creation" type="submit">Creer Compte</button>
