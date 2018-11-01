@@ -8,9 +8,19 @@
   <body>
     <?php include('../controleur/header.ctrl.php'); ?>
     <nav>
-      <form action=<?php if(isset($_GET['fromC'])){print("\"../controleur/compte.ctrl.php\"");} else {print("\"../controleur/recherche.ctrl.php?firstId=$firstId&c=$cate&r=$reg\"");}?> method="post">
-        <input type="submit" value="retour">
-      </form>
+      <div class="Option">
+        <form action=<?php if(isset($_GET['fromC'])){print("\"../controleur/compte.ctrl.php\"");} else {print("\"../controleur/recherche.ctrl.php?firstId=$firstId&c=$cate&r=$reg\"");}?> method="post">
+          <input type="submit" value="retour">
+        </form>
+        <?php if (isset($_SESSION['utilisateur']) && $_SESSION['utilisateur']->__get('identifiant') == $offre->__get('id')) { ?>
+          <form action="../controleur/compte.ctrl.php?suppr=<?php  echo $offre->__get('ref');?>" method="post">
+            <input type="submit" value="Supprimer offre">
+          </form>
+        <?php } ?>
+        <form class="" action="index.html" method="post">
+
+        </form>
+      </div>
       <div class="Offre">
         <img src="<?php echo $config['img_path']."/".$offre->__get('photo') ?>" alt="">
         <h3><?php echo $offre->__get('intitule') ?></h3>

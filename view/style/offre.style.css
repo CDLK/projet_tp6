@@ -76,6 +76,13 @@ nav h4 {
 
 }
 
+div.Option {
+  background-color: #e6e9f0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .Offre {
   display: flex;
   flex-direction: column;

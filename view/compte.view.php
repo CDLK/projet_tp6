@@ -8,9 +8,14 @@
   <body>
     <?php include('../controleur/header.ctrl.php'); ?>
     <nav>
-      <form action="../controleur/mainPage.ctrl.php?" method="post">
-        <input type="submit" value="retour">
-      </form>
+      <div class="Option">
+        <form action="../controleur/mainPage.ctrl.php?" method="post">
+          <input type="submit" value="retour">
+        </form>
+        <form action="../controleur/creaOffre.ctrl.php?" method="post">
+          <input type="submit" value="Creer une offre">
+        </form>
+      </div>
       <?php  if (!$userCo) {?>
         <p>Vous n'êtes pas connecté !</p>
       <?php } else {?>

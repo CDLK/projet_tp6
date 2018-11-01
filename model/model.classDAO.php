@@ -343,7 +343,7 @@ function validUser($mail,$mdp) {
   }
   function creerOffre($user,$intitule,$prix,$description,$categorie,$phototype) {
     $ref = $this->getOffreNewRef();
-    $photo = $ref.$phototype;
+    $photo = $ref.".".$phototype;
     $req = $this->db->prepare("INSERT INTO offre (ref,photo,intitule,prix,region,caracteristique,id,categorie) VALUES (:ref,:photo,:intitule,:prix,:region,:caracteristique,:id,:categorie)");
     $nouvelleOffre = array('ref' => (int)$ref,
                           'photo' => $photo,
@@ -354,7 +354,7 @@ function validUser($mail,$mdp) {
                           'id' => $user->__get('identifiant'),
                           'categorie' => $categorie);
     try{
-        $req->execute($nouvelleUtilisateur);
+        $req->execute($nouvelleOffre);
       }catch(Exception $e){
         echo "error au niveau du creerOffre".$e;
       }
