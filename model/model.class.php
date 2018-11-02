@@ -12,6 +12,7 @@ class Offre{
   private $categorie;
 
 
+
   // function __construct(int $categorie ,string $caracteristique ,string $region,string $intitule,string $photo) {
   //     //$this->ref = $ref;faire avec le DAO, le dernier numero de produit
   //     $this->photo = $photo;
@@ -92,7 +93,7 @@ class Utilisateur {
         //car dans le test on fait a->...
         //et le attribut sont en private
       }
-      
+
 
 
 
