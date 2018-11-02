@@ -5,8 +5,10 @@
   if(isset($_POST['Creation'])){
     if($dao->validMail($_POST['mail'])){
       $erMail = true;
+      $erMdp = false;
     } elseif (!($_POST['mdp']===$_POST['mdpVerif'])){
       $erMdp = true;
+      $erMail = false;
     } else {
 
       $dao->creerCompte($_POST['nom'],$_POST['prenom'],$_POST['age'],$_POST['mdp'],$_POST['region'],$_POST['mail'],$_POST['telephone']);
