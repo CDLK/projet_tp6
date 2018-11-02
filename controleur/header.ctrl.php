@@ -5,12 +5,14 @@ require_once('../model/model.classDAO.php');
 $categories = $dao->getAllCatFille();
 $regions = $dao->getAllRegions();
 
-session_start();
-
 if(isset($_SESSION['utilisateur'])){
   $userCo = true;
   $user = $_SESSION['utilisateur'];
 } else {
+  $userCo = false;
+}
+
+if(isset($_GET['deco'])){
   $userCo = false;
 }
 
