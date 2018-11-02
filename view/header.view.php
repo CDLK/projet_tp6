@@ -29,6 +29,7 @@
             <option value="<?php echo $region->getNom() ?>"><?php echo $region->getNom() ?></option>
           <?php } ?>
         <?php } ?>
+      <!--  <input type="text" value="" placeholder="recherche"> -->
       </select>
       <input type="submit" name="" value="Rechercher">
     </p>
