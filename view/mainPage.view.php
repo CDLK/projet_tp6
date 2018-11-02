@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../view/style/mainPage.style.css">
-    <title>Test Les Halles du Web</title>
+    <title>Les Halles du Web</title>
   </head>
   <body>
     <?php include('../controleur/header.ctrl.php'); ?>
