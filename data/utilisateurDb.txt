@@ -1,4 +1,4 @@
-1|LaTaupe|René|56|motDePasse|Rhône-Alpes|RenéLaTaupe@gmail.com|0473737373
+1|LaTaupe|René|56|motDePasse|Rhône-Alpes|ReneLaTaupe@gmail.com|0473737373
 2|Gaillard|Remy|26|azertyuiop|Rhône-Alpes|remy@orange.com|0645268363
 3|Du Moulin|Jack|75|123456|Alsace|jack@gmail.com|0642425869
 4|Faure|Stéphanie|55|1234pass|Auvergne|popoto@gmail.com|0778956445

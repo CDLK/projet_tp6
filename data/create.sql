@@ -17,6 +17,12 @@ FOREIGN KEY (region) REFERENCES utilisateur(region),
 FOREIGN KEY (categorie) REFERENCES categorie(id)
 );
 
+Create table suivisOffre (
+refOffre INTEGER,
+idUtilisateur INTEGER,
+PRIMARY KEY(refOffre,idUtilisateur)
+);
+
 Create table utilisateur (
 identifiant INTEGER PRIMARY KEY,
 nomUser TEXT,

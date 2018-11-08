@@ -36,7 +36,7 @@
             <?php if ($erMail) {?>
               <p class="erreur">Mail déjà utilisé !</p>
             <?php } ?>
-            <input type="mail" placeholder="Entrer un mail" name="mail" <?php if ($erMdp && !$erMail) {print("value=".$_POST['mail']." ");} ?>required>
+            <input type="email" placeholder="Entrer un mail" name="mail" <?php if ($erMdp && !$erMail) {print("value=".$_POST['mail']." ");} ?>required>
             <label for="mdp"><b>Mot de passe :</b></label>
             <?php if ($erMdp) {?>
               <p class="erreur">Erreur mots de passe ne correspondant pas !</p>

@@ -21,7 +21,7 @@
             <?php if (!$validMail) {?>
               <p class="erreur">Aucun utilisateur avec ce mail n'existe !</p>
             <?php } ?>
-            <input type="text" placeholder="Enter Username" name="mail" <?php if ($erCo && $validMail) {print("value=".$_POST['mail']." ");} ?>required>
+            <input type="email" placeholder="Enter Username" name="mail" <?php if ($erCo && $validMail) {print("value=".$_POST['mail']." ");} ?>required>
             <label for="mdp"><b>Mot de passe</b></label>
             <?php if ($validMail && $erCo) {?>
               <p class="erreur">Mauvais mots de passe !</p>
