@@ -29,6 +29,7 @@
             <option value="<?php echo $region->getNom() ?>"><?php echo $region->getNom() ?></option>
           <?php } ?>
         <?php } ?>
+      <!--  <input type="text" value="fait rien encore" placeholder="recherche"> -->
       </select>
       <input type="submit" name="" value="Rechercher">
     </p>
