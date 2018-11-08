@@ -30,19 +30,42 @@
         <h5>Région :</h5>
           <p><?php echo $user->__get('region') ?></p>
       </div>
-      <h2>Vos offres :</h2>
-      <?php foreach ($mesOffre as $offre) { ?>
-        <a href="../controleur/offre.ctrl.php?ref=<?php echo $offre->__get('ref')?>&fromC=1">
-        <div class="Offre">
-          <img src="<?php echo $config['img_path']."/".$offre->__get('photo') ?>" alt="">
-          <div >
-            <h4><?php echo $offre->__get('intitule')?></h4>
-            <p class="prix"><?php echo $offre->__get('prix')?>€</p>
-            <p><?php echo $offre->__get('region')?></p>
+
+      <?php if(sizeof($offreSuivis)>0){ ?>
+        <h2>Offres suivis :</h2>
+        <?php foreach ($offreSuivis as $offre) { ?>
+          <a href="../controleur/offre.ctrl.php?ref=<?php echo $offre->__get('ref')?>&fromC=1">
+          <div class="Offre">
+            <img src="<?php echo $config['img_path']."/".$offre->__get('photo') ?>" alt="">
+            <div >
+              <h4><?php echo $offre->__get('intitule')?></h4>
+              <p class="prix"><?php echo $offre->__get('prix')?>€</p>
+              <p><?php echo $offre->__get('region')?></p>
+            </div>
           </div>
-        </div>
-        </a>
-      <?php }?>
+          </a>
+        <?php }?>
+      <?php } else { ?>
+        <h2>Vous ne suivez aucune offres</h2>
+      <?php } ?>
+
+      <?php if(sizeof($mesOffre)>0){ ?>
+        <h2>Vos offres :</h2>
+        <?php foreach ($mesOffre as $offre) { ?>
+          <a href="../controleur/offre.ctrl.php?ref=<?php echo $offre->__get('ref')?>&fromC=1">
+          <div class="Offre">
+            <img src="<?php echo $config['img_path']."/".$offre->__get('photo') ?>" alt="">
+            <div >
+              <h4><?php echo $offre->__get('intitule')?></h4>
+              <p class="prix"><?php echo $offre->__get('prix')?>€</p>
+              <p><?php echo $offre->__get('region')?></p>
+            </div>
+          </div>
+          </a>
+        <?php }?>
+      <?php } else { ?>
+        <h2>Vous n'avez poster aucune offre</h2>
+      <?php } ?>
       <?php }?>
     </nav>
     <?php include('footer.view.php'); ?>

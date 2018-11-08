@@ -43,10 +43,11 @@
       } elseif (isset($_POST['arSuivis'])) {
         $dao->supprimerSuivis($offre->__get('ref'),$_SESSION['utilisateur']->__get('identifiant'));
       }
-      $estSuivis = $dao->offreSuivisPar($offre->__get('ref'),$_SESSION['utilisateur']->__get('identifiant'));
+      $estSuivis = $dao->estSuivisPar($offre->__get('ref'),$_SESSION['utilisateur']->__get('identifiant'));
     }
-
-      $vendeur = $dao->getVendeur($offre->__get('id'));
+    $estVendeurConnecter = (bool)(isset($_SESSION['utilisateur']) && $_SESSION['utilisateur']->__get('identifiant') == $offre->__get('id'));
+    $estConnecter = (isset($_SESSION['utilisateur']));
+    $vendeur = $dao->getVendeur($offre->__get('id'));
 
 
     include('../view/vueOffre.view.php');

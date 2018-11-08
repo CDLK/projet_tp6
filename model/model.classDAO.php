@@ -226,7 +226,7 @@ function getOffre($ref) {
 }
 
 function creerSuivis($ref,$id) {
-  $req = $this->db->prepare("INSERT INTO suivisOffre (refOffre,idUtilisateur) VALUES (:refOffre,:idUtilisateur)");
+  $req = $this->db->prepare("INSERT INTO suivisOffre(refOffre,idUtilisateur) VALUES (:refOffre,:idUtilisateur)");
   $nouveauSuivis = array('refOffre' => (int)$ref,
                          'idUtilisateur' => (int)$id);
   try{
@@ -236,7 +236,7 @@ function creerSuivis($ref,$id) {
     }
 }
 
-function offreSuivisPar($ref,$id) {
+function estSuivisPar($ref,$id) {
   $req = "SELECT * FROM suivisOffre WHERE refOffre = $ref AND idUtilisateur = $id";
   try{
       if($d = $this->db->query($req)){
@@ -254,6 +254,20 @@ function offreSuivisPar($ref,$id) {
     return (bool)$b;
 }
 
+function offreSuivisPar($id) {
+  $req = "SELECT * FROM offre WHERE ref in (SELECT refOffre FROM suivisOffre WHERE idUtilisateur = $id)";
+  try{
+      if($d = $this->db->query($req)){
+        $offres=$d->fetchAll(PDO::FETCH_CLASS,'Offre');
+      }
+    }catch(Exception $e){
+      echo "error au niveau du searchORC".$e;
+      return NULL;
+    }
+
+    return $offres;
+}
+
 function supprimerSuivis($ref,$id=NULL) {
   if($id!=NULL){
     $req = "DELETE FROM suivisOffre WHERE refOffre = $ref AND idUtilisateur = $id";
@@ -267,7 +281,6 @@ function supprimerSuivis($ref,$id=NULL) {
       return NULL;
     }
 }
-
 
 function getVendeur($id) {
   $req = "SELECT * FROM utilisateur WHERE identifiant = $id";

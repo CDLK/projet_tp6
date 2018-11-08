@@ -15,7 +15,7 @@ if(isset($_SESSION['utilisateur'])){
   $userCo = true;
   $user = $_SESSION['utilisateur'];
   $mesOffre = $dao->getOffreUser($user->__get('identifiant'));
-
+  $offreSuivis = $dao->offreSuivisPar($user->__get('identifiant'));
 
 } else {
   $userCo = false;
