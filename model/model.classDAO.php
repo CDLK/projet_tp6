@@ -228,7 +228,7 @@ function getOffre($ref) {
 function creerSuivis($ref,$id) {
   $req = $this->db->prepare("INSERT INTO suivisOffre (refOffre,idUtilisateur) VALUES (:refOffre,:idUtilisateur)");
   $nouveauSuivis = array('refOffre' => (int)$ref,
-                         'idUtilisateur' => $id);
+                         'idUtilisateur' => (int)$id);
   try{
       $req->execute($nouveauSuivis);
     }catch(Exception $e){

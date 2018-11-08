@@ -37,15 +37,15 @@
       <div class="OptionSuivis">
       <?php if(isset($_SESSION['utilisateur']) && $_SESSION['utilisateur']->__get('identifiant') != $offre->__get('id')){ ?>
         <?php if($estSuivis){ ?>
-          <form action="<?php  echo $_SERVER['PHP_SELF']?>" method="post">
+          <form action="<?php print($_SERVER['PHP_SELF']."?ref=".$ref)?>" method="post">
             <input name="arSuivis" type="submit" value="Arreter de suivre">
           </form>
         <?php } else { ?>
-          <form action="<?php  echo $_SERVER['PHP_SELF']?>" method="post">
+          <form action="<?php print($_SERVER['PHP_SELF']."?ref=".$ref) ?>" method="post">
             <input name="suivre" type="submit" value="Suivre offre">
           </form>
         <?php } ?>
-      <?php } else { ?>
+      <?php } elseif (!isset($_SESSION['utilisateur'])) { ?>
         <h4>Connecter vous pour pouvoir suivre cette offre</h4>
       <?php } ?>
     </div>

@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
     require_once('../model/model.class.php');
     require_once('../model/model.classDAO.php');
 
@@ -22,6 +22,7 @@ ini_set("display_errors", 1);
       $offre = $dao->getOffre($ref);
     } else {
       $offre = $dao->getOffre(1);
+      $ref = 1;
     }
 
     if (isset($_GET['r'])) {
@@ -29,6 +30,7 @@ ini_set("display_errors", 1);
     } else {
       $reg = "Toute";
     }
+
     if (isset($_GET['c'])) {
       $cate = $_GET['c'];
     } else {
