@@ -33,6 +33,22 @@
           <li><p>Mail : <?php echo $vendeur->__get('mail') ?></p></li>
         </ul>
       </div>
+
+      <div class="OptionSuivis">
+      <?php if(isset($_SESSION['utilisateur']) && $_SESSION['utilisateur']->__get('identifiant') != $offre->__get('id')){ ?>
+        <?php if($estSuivis){ ?>
+          <form action="<?php  echo $_SERVER['PHP_SELF']?>" method="post">
+            <input name="arSuivis" type="submit" value="Arreter de suivre">
+          </form>
+        <?php } else { ?>
+          <form action="<?php  echo $_SERVER['PHP_SELF']?>" method="post">
+            <input name="suivre" type="submit" value="Suivre offre">
+          </form>
+        <?php } ?>
+      <?php } else { ?>
+        <h4>Connecter vous pour pouvoir suivre cette offre</h4>
+      <?php } ?>
+    </div>
     </nav>
     <?php include('footer.view.php'); ?>
   </body>

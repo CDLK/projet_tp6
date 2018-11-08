@@ -93,12 +93,6 @@ class Utilisateur {
         //car dans le test on fait a->...
         //et le attribut sont en private
       }
-
-
-
-
-
-
 }
 
 class Categorie{

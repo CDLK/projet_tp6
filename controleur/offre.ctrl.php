@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
     require_once('../model/model.class.php');
     require_once('../model/model.classDAO.php');
 
@@ -31,6 +33,15 @@
       $cate = $_GET['c'];
     } else {
       $cate = "Toute";
+    }
+
+    if(isset($_SESSION['utilisateur'])){
+      if(isset($_POST['suivre'])){
+        $dao->creerSuivis($offre->__get('ref'),$_SESSION['utilisateur']->__get('identifiant'));
+      } elseif (isset($_POST['arSuivis'])) {
+        $dao->supprimerSuivis($offre->__get('ref'),$_SESSION['utilisateur']->__get('identifiant'));
+      }
+      $estSuivis = $dao->offreSuivisPar($offre->__get('ref'),$_SESSION['utilisateur']->__get('identifiant'));
     }
 
       $vendeur = $dao->getVendeur($offre->__get('id'));

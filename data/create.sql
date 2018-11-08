@@ -20,7 +20,9 @@ FOREIGN KEY (categorie) REFERENCES categorie(id)
 Create table suivisOffre (
 refOffre INTEGER,
 idUtilisateur INTEGER,
-PRIMARY KEY(refOffre,idUtilisateur)
+PRIMARY KEY(refOffre,idUtilisateur),
+FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(identifiant),
+FOREIGN KEY (refOffre) REFERENCES offre(ref)
 );
 
 Create table utilisateur (

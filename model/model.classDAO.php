@@ -224,6 +224,51 @@ function getOffre($ref) {
     }
     return $offre[0];
 }
+
+function creerSuivis($ref,$id) {
+  $req = $this->db->prepare("INSERT INTO suivisOffre (refOffre,idUtilisateur) VALUES (:refOffre,:idUtilisateur)");
+  $nouveauSuivis = array('refOffre' => (int)$ref,
+                         'idUtilisateur' => $id);
+  try{
+      $req->execute($nouveauSuivis);
+    }catch(Exception $e){
+      echo "error au niveau du creerSuivis".$e;
+    }
+}
+
+function offreSuivisPar($ref,$id) {
+  $req = "SELECT * FROM suivisOffre WHERE refOffre = $ref AND idUtilisateur = $id";
+  try{
+      if($d = $this->db->query($req)){
+        $offre=$d->fetchAll(PDO::FETCH_CLASS,'Offre');
+      }
+    }catch(Exception $e){
+      echo "error au niveau du searchORC".$e;
+      return NULL;
+    }
+    if (isset($offre[0])) {
+      $b = true;
+    } else {
+      $b = false;
+    }
+    return (bool)$b;
+}
+
+function supprimerSuivis($ref,$id=NULL) {
+  if($id!=NULL){
+    $req = "DELETE FROM suivisOffre WHERE refOffre = $ref AND idUtilisateur = $id";
+  } else {
+    $req = "DELETE FROM suivisOffre WHERE refOffre = $ref";
+  }
+  try{
+      $this->db->exec($req);
+    }catch(Exception $e){
+      echo "error au niveau du SupprimerSuivis".$e;
+      return NULL;
+    }
+}
+
+
 function getVendeur($id) {
   $req = "SELECT * FROM utilisateur WHERE identifiant = $id";
   try{
@@ -362,6 +407,7 @@ function validUser($mail,$mdp) {
 
   function supprOffre($ref) {
         $offre = $this->getOffre($ref);
+        $this->supprimerSuivis($ref);
         unlink("../data/imgOffre/".$offre->__get('photo'));
         $req = "DELETE FROM offre WHERE ref = $ref";
     try{
