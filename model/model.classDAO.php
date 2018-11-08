@@ -79,7 +79,7 @@ function getAllRegions() : array {
 
 function search($name) : array{
   $tab = array();
-  $rep = "SELECT * FROM offre where intitule LIKE %$name%";
+  $rep = "SELECT * FROM offre where intitule LIKE \"%$name%\"";
   try{
       if($d = $this->db->query($req)){
         $tab=$d->fetchAll();
@@ -121,6 +121,29 @@ function getCatMere() : array{
     return $tab;
 }
 
+function estCatMere($id){
+  if($id!="Toute"){
+    $tab = array();
+    $req = "SELECT * FROM categorie WHERE id = $id AND id IN (SELECT id FROM categorie WHERE id = pere)";
+    try{
+        if($d = $this->db->query($req)){
+          $tab=$d->fetchAll(PDO::FETCH_CLASS,'Categorie');
+        }
+      }catch(Exception $e){
+        echo "error au niveau du getCatMaman".$e;
+        return NULL;
+      }
+      if (isset($tab[0])) {
+        $b = true;
+      } else {
+        $b = false;
+      }
+      return (bool)$b;
+  } else {
+    return false;
+  }
+}
+
 // cherche les categories ayant pour pere cat
 function getCatFille($cat) : array{
   $tab = array();
@@ -135,6 +158,19 @@ function getCatFille($cat) : array{
       return NULL;
     }
     return $tab;
+}
+
+function getIntCat($ref) {
+  $req = "SELECT intitule FROM categorie WHERE id = (SELECT id FROM offre WHERE ref = $ref)";
+  try{
+      if($d = $this->db->query($req)){
+        $intCat=$d->fetch();
+      }
+    }catch(Exception $e){
+      echo "error au niveau du getCat".$e;
+      return NULL;
+    }
+    return $intCat[0];
 }
 
 // cherche les categories ayant pour pere cat
@@ -189,6 +225,26 @@ function getNOffreCorespondante($firstId, $region, $categorie) : array{
     return $tab;
 }
 
+function getNOffreCorespondanteMere($firstId, $region, $categorie) : array{
+  $tab = array();
+  if($region!='Toute'){
+    $where = "WHERE region = \"$region\" AND categorie IN (SELECT id FROM categorie WHERE pere = $categorie AND id != $categorie)";
+  }else{
+    $where = "WHERE categorie IN (SELECT id FROM categorie WHERE pere = $categorie AND id != $categorie)";
+  }
+
+  $req = "SELECT * FROM offre $where LIMIT 10 Offset $firstId";
+  try{
+      if($d = $this->db->query($req)){
+        $tab=$d->fetchAll(PDO::FETCH_CLASS,'Offre');
+      }
+    }catch(Exception $e){
+      echo "error au niveau du searchORC".$e;
+      return NULL;
+    }
+    return $tab;
+}
+
 function getNbOffreRec($region, $categorie) {
   if($region=='Toute' && $categorie=='Toute'){
     $where = " ";
@@ -210,6 +266,15 @@ function getNbOffreRec($region, $categorie) {
       return NULL;
     }
     return (int)$nb["count"];
+}
+
+function getNbOffreRecCatMere($region, $categorieMere) {
+  $cats = $this->getCatFille($categorieMere);
+  $n=0;
+  foreach ($cats as $catf) {
+      $n += $this->getNbOffreRec($region,$catf->__get('id'));
+  }
+  return (int)$n;
 }
 
 function getOffre($ref) {
@@ -264,7 +329,6 @@ function offreSuivisPar($id) {
       echo "error au niveau du searchORC".$e;
       return NULL;
     }
-
     return $offres;
 }
 

@@ -25,11 +25,12 @@
         <h3><?php echo $offre->__get('intitule') ?></h3>
         <p class="prix"><?php echo $offre->__get('prix') ?>€</p>
         <p><?php echo $offre->__get('caracteristique') ?></p>
+        <!-- <p class="Categorie"><?php// echo $intCat ?></p> -->
       </div>
 
       <div class="Vendeur">
         <h3>Vendeur<?php if($estVendeurConnecter) print(" (Vous) "); ?> :</h3>
-        <h4><?php print($vendeur->__get('prenomUser')." ".$vendeur->__get('nomUser'));?></h4>
+        <h4><?php print($vendeur->prenomUser." ".$vendeur->nomUser);?></h4>
         <h5>Contacte :</h5>
         <ul>
           <li><p>Téléphone : <?php echo $vendeur->__get('telephone') ?></p></li>
@@ -40,11 +41,11 @@
       <div class="OptionSuivis">
       <?php if($estConnecter && $_SESSION['utilisateur']->__get('identifiant') != $offre->__get('id')){ ?>
         <?php if($estSuivis){ ?>
-          <form action="<?php print($_SERVER['PHP_SELF']."?ref=".$ref)?>" method="post">
+          <form action="<?php if(isset($_GET['fromC'])){print($_SERVER['PHP_SELF']."?ref=".$ref."&fromC=1");} else {print($_SERVER['PHP_SELF']."?ref=".$ref."&firstId=$firstId&c=$cate&r=$reg");} ?>" method="post">
             <input name="arSuivis" type="submit" value="Arreter de suivre">
           </form>
         <?php } else { ?>
-          <form action="<?php print($_SERVER['PHP_SELF']."?ref=".$ref) ?>" method="post">
+          <form action="<?php if(isset($_GET['fromC'])){print($_SERVER['PHP_SELF']."?ref=".$ref."&fromC=1");} else {print($_SERVER['PHP_SELF']."?ref=".$ref."&firstId=$firstId&c=$cate&r=$reg");} ?>" method="post">
             <input name="suivre" type="submit" value="Suivre offre">
           </form>
         <?php } ?>

@@ -69,6 +69,10 @@ nav div {
   background-color: white;
 }
 
+nav div.Offre h3{
+  color: blue;
+}
+
 nav h4 {
   color: blue;
   font-style: normal;

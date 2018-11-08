@@ -18,6 +18,9 @@ require_once('../model/model.classDAO.php');
     $reg = "Toute";
   }
   if (isset($_GET['c'])) {
+    if($dao->estCatMere($_GET['c'])){
+      $catsFille = $dao->getCatFille($_GET['c']);
+    }
     $cate = $_GET['c'];
   } else {
     $cate = "Toute";
@@ -25,9 +28,15 @@ require_once('../model/model.classDAO.php');
 
   $config = parse_ini_file('../config/config.ini');
 
-  $offres = $dao->getNOffreCorespondante($firstId,$reg,$cate);
-  $nboffre = $dao->getNbOffreRec($reg,$cate);
+  if($dao->estCatMere($_GET['c'])){
+    $offres = $dao->getNOffreCorespondanteMere($firstId,$reg,$cate);
+    $nboffre = $dao->getNbOffreRecCatMere($reg,$cate);
+  } else {
+    $offres = $dao->getNOffreCorespondante($firstId,$reg,$cate);
+    $nboffre = $dao->getNbOffreRec($reg,$cate);
+  }
 
+  //$categories = $dao->getAllCats();
 
   include('../view/recherche.view.php');
  ?>

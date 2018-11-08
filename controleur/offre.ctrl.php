@@ -37,6 +37,8 @@
       $cate = "Toute";
     }
 
+    $intCat = $dao->getIntCat($ref);
+
     if(isset($_SESSION['utilisateur'])){
       if(isset($_POST['suivre'])){
         $dao->creerSuivis($offre->__get('ref'),$_SESSION['utilisateur']->__get('identifiant'));
