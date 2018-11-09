@@ -30,7 +30,7 @@
           <?php } ?>
         <?php } ?>
       </select>
-      <input type="text" name="rec" value="<?php if(isset($_GET['rec'])) echo $_GET['rec']?>" placeholder="Entrer mot clé">
+      <input class="RecBar" type="text" name="rec" value="<?php if(isset($_GET['rec'])) echo $_GET['rec']?>" placeholder="Entrer mot clé">
       <input type="submit" name="" value="Rechercher">
     </p>
     </form>

@@ -40,9 +40,9 @@ nav{
   text-align: center;
 }
 
-nav img {
-  width: 150px;
-  height: 150px;
+nav div img {
+  max-width: 150px;
+  max-height: 150px;
 }
 
 nav div.Fleche img{

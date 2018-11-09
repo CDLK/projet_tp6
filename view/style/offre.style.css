@@ -42,8 +42,8 @@ nav .Offre{
 }
 
 nav img {
-  width: 150px;
-  height: 150px;
+  max-width: 350px;
+  max-height: 350px;
 }
 
 nav div.Fleche img{

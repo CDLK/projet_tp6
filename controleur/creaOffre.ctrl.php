@@ -8,7 +8,6 @@
     var_dump($_FILES["image"]["name"]);
     var_dump($_FILES);
     $extension=end(explode(".", $_FILES["image"]["name"]));
-    var_dump($extension);
     if ($_FILES["image"]["size"] > 5242880) {
       $erImg = 1;
     } elseif($extension !="jpg"
