@@ -21,12 +21,12 @@
             <?php if (!$validMail) {?>
               <p class="erreur">Aucun utilisateur avec ce mail n'existe !</p>
             <?php } ?>
-            <input type="email" placeholder="Enter Username" name="mail" <?php if ($erCo && $validMail) {print("value=".$_POST['mail']." ");} ?>required>
+            <input type="email" placeholder="Adresse mail" name="mail" <?php if ($erCo && $validMail) {print("value=".$_POST['mail']." ");} ?>required>
             <label for="mdp"><b>Mot de passe</b></label>
             <?php if ($validMail && $erCo) {?>
               <p class="erreur">Mauvais mots de passe !</p>
             <?php } ?>
-            <input type="password" placeholder="Enter Password" name="mdp" required>
+            <input type="password" placeholder="Mot de passe" name="mdp" required>
             <button name="Connection" type="submit">Connection</button>
           </form>
         </div>

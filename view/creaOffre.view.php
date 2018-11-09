@@ -21,7 +21,7 @@
             <label for="intitule"><b>Intitule de l'offre :</b></label>
             <input type="text" placeholder="Entrer intitule" name="intitule" <?php if ($erImg!=0) {print("value=\"".$_POST['intitule']."\" ");} ?>required>
 
-            <label for="image"><b>Image pour ilustrer votre offre :</b></label>
+            <label for="image"><b>Image pour ilustrer votre offre (taille infèrieur à 5Mo):</b></label>
             <?php if ($erImg == 1) {?>
               <p class="erreur">Image trop grosse pour être utiliser </p>
             <?php } ?>
