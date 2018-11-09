@@ -25,7 +25,7 @@
         <h3><?php echo $offre->__get('intitule') ?></h3>
         <p class="prix"><?php echo $offre->__get('prix') ?>€</p>
         <p><?php echo $offre->__get('caracteristique') ?></p>
-        <!-- <p class="Categorie"><?php// echo $intCat ?></p> -->
+        <p class="Categorie"><?php echo $intCat ?></p>
       </div>
 
       <div class="Vendeur">

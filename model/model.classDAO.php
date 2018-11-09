@@ -161,7 +161,7 @@ function getCatFille($cat) : array{
 }
 
 function getIntCat($ref) {
-  $req = "SELECT intitule FROM categorie WHERE id = (SELECT id FROM offre WHERE ref = $ref)";
+  $req = "SELECT intitule FROM categorie WHERE id = (SELECT categorie FROM offre WHERE ref = $ref)";
   try{
       if($d = $this->db->query($req)){
         $intCat=$d->fetch();

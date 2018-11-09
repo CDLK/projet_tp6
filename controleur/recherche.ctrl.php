@@ -36,7 +36,5 @@ require_once('../model/model.classDAO.php');
     $nboffre = $dao->getNbOffreRec($reg,$cate);
   }
 
-  //$categories = $dao->getAllCats();
-
   include('../view/recherche.view.php');
  ?>
