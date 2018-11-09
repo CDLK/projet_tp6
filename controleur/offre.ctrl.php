@@ -37,6 +37,12 @@
       $cate = "Toute";
     }
 
+    if (isset($_GET['rec'])) {
+      $rec = $_GET['rec'];
+    } else {
+      $rec = "";
+    }
+
     $intCat = $dao->getIntCat($ref);
 
     if(isset($_SESSION['utilisateur'])){

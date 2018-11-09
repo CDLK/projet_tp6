@@ -25,15 +25,21 @@ require_once('../model/model.classDAO.php');
   } else {
     $cate = "Toute";
   }
+  if (isset($_GET['rec'])) {
+    $rec = $_GET['rec'];
+  } else {
+    $rec = "";
+  }
+
 
   $config = parse_ini_file('../config/config.ini');
 
   if($dao->estCatMere($_GET['c'])){
-    $offres = $dao->getNOffreCorespondanteMere($firstId,$reg,$cate);
-    $nboffre = $dao->getNbOffreRecCatMere($reg,$cate);
+    $offres = $dao->getNOffreCorespondanteMere($firstId,$reg,$cate,$rec);
+    $nboffre = $dao->getNbOffreRecCatMere($reg,$cate,$rec);
   } else {
-    $offres = $dao->getNOffreCorespondante($firstId,$reg,$cate);
-    $nboffre = $dao->getNbOffreRec($reg,$cate);
+    $offres = $dao->getNOffreCorespondante($firstId,$reg,$cate,$rec);
+    $nboffre = $dao->getNbOffreRec($reg,$cate,$rec);
   }
 
   include('../view/recherche.view.php');

@@ -76,21 +76,6 @@ function getAllRegions() : array {
     return $tab;
 }
 
-
-function search($name) : array{
-  $tab = array();
-  $rep = "SELECT * FROM offre where intitule LIKE \"%$name%\"";
-  try{
-      if($d = $this->db->query($req)){
-        $tab=$d->fetchAll();
-      }
-    }catch(Exception $e){
-      echo "error au niveau du search".$e;
-      return NULL;
-    }
-    return $tab;
-}
-
 //recherche les produits par region
 function searchOffreRegion($region) : array {
   $tab = array();
@@ -200,20 +185,20 @@ function getCatFromId($id) {
     }
     return $cat[0];
 }
-
-function getNOffreCorespondante($firstId, $region, $categorie) : array{
+//test pour recherche avec mot clé
+function getNOffreCorespondante($firstId, $region, $categorie,$rec) : array{
   $tab = array();
   if($region=='Toute' && $categorie=='Toute'){
-    $where = " ";
+    $where = "WHERE";
   }elseif($region!='Toute' && $categorie!='Toute'){
-    $where = "WHERE region = \"$region\" AND categorie = $categorie";
+    $where = "WHERE region = \"$region\" AND categorie = $categorie AND";
   }elseif($region!='Toute' && $categorie=='Toute'){
-    $where = "WHERE region = \"$region\"";
+    $where = "WHERE region = \"$region\" AND";
   }elseif($region=='Toute' && $categorie!='Toute'){
-    $where = "WHERE categorie = $categorie";
+    $where = "WHERE categorie = $categorie AND";
   }
 
-  $req = "SELECT * FROM offre $where LIMIT 10 Offset $firstId";
+  $req = "SELECT * FROM offre $where intitule LIKE \"%$rec%\" LIMIT 10 Offset $firstId";
   try{
       if($d = $this->db->query($req)){
         $tab=$d->fetchAll(PDO::FETCH_CLASS,'Offre');
@@ -225,15 +210,15 @@ function getNOffreCorespondante($firstId, $region, $categorie) : array{
     return $tab;
 }
 
-function getNOffreCorespondanteMere($firstId, $region, $categorie) : array{
+function getNOffreCorespondanteMere($firstId, $region, $categorie, $rec) : array{
   $tab = array();
   if($region!='Toute'){
-    $where = "WHERE region = \"$region\" AND categorie IN (SELECT id FROM categorie WHERE pere = $categorie AND id != $categorie)";
+    $where = "WHERE region = \"$region\" AND categorie IN (SELECT id FROM categorie WHERE pere = $categorie AND id != $categorie) AND";
   }else{
-    $where = "WHERE categorie IN (SELECT id FROM categorie WHERE pere = $categorie AND id != $categorie)";
+    $where = "WHERE categorie IN (SELECT id FROM categorie WHERE pere = $categorie AND id != $categorie) AND";
   }
 
-  $req = "SELECT * FROM offre $where LIMIT 10 Offset $firstId";
+  $req = "SELECT * FROM offre $where intitule LIKE \"%$rec%\" LIMIT 10 Offset $firstId";
   try{
       if($d = $this->db->query($req)){
         $tab=$d->fetchAll(PDO::FETCH_CLASS,'Offre');
