@@ -40,7 +40,7 @@
       <a href="../controleur/connection.ctrl.php"><p>Se connecter</p></a>
       <a href="../controleur/creaCompte.ctrl.php"><p>Creer Un Compte</p></a>
   <?php } else {?>
-    <h4><?php print($user->__get('prenomUser')." ".$user->__get('nomUser')) ?></h4>
+    <h4><?php print($user->prenomUser." ".$user->nomUser) ?></h4>
     <a href="../controleur/compte.ctrl.php"><p>Mon compte</p></a><?php  ?>
     <a href="<?php  print("../controleur/mainPage.ctrl.php"."?deco=true");?><?php  if(isset($_GET['r'])){print("&r=".$_GET['c']);} if(isset($_GET['c'])){print("&c=".$_GET['c']);} if(isset($_GET['firstId'])){print("&firstId=".$_GET['firstId']);} if(isset($_GET['rec'])){print("&rec=".$_GET['rec']);}?>"><p>Se deconnecter</p></a>
   <?php }?>
