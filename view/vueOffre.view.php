@@ -31,7 +31,7 @@
       <div class="Vendeur">
         <h3>Vendeur<?php if($estVendeurConnecter) print(" (Vous) "); ?> :</h3>
         <h4><?php print($vendeur->prenomUser." ".$vendeur->nomUser);?></h4>
-        <h5>Contacte :</h5>
+        <h5>Contact :</h5>
         <ul>
           <li><p>Téléphone : <?php echo $vendeur->__get('telephone') ?></p></li>
           <li><p>Mail : <?php echo $vendeur->__get('mail') ?></p></li>

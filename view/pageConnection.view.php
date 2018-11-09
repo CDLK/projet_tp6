@@ -15,7 +15,7 @@
           <?php if (isset($_GET['Inscr'])) {?>
             <h3 class="Inscr">Creation du compte effectuer vous pouvez vous connecter !</h3>
           <?php } ?>
-          <h3>Connection :</h3>
+          <h3>Connexion :</h3>
           <form action="<?php  echo $_SERVER['PHP_SELF']?>" method="post">
             <label for="mail"><b>Mail</b></label>
             <?php if (!$validMail) {?>
@@ -27,7 +27,7 @@
               <p class="erreur">Mauvais mots de passe !</p>
             <?php } ?>
             <input type="password" placeholder="Mot de passe" name="mdp" required>
-            <button name="Connection" type="submit">Connection</button>
+            <button name="Connection" type="submit">Connexion</button>
           </form>
         </div>
       <?php }?>
