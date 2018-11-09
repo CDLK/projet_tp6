@@ -40,9 +40,9 @@ nav .Offre{
   text-align: center;
 }
 
-nav img {
-  max-width: 150px;
-  max-height: 150px;
+nav a div img {
+  max-width: 250px;
+  max-height: 250px;
 }
 
 nav div.Fleche img{
