@@ -50,7 +50,7 @@
           </form>
         <?php } ?>
       <?php } elseif (!$estConnecter) { ?>
-        <h4>Connecter vous pour pouvoir suivre cette offre</h4>
+        <h4><a href="../controleur/connection.ctrl.php">Connecter vous</a> pour pouvoir suivre cette offre</h4>
       <?php } ?>
     </div>
     </nav>
