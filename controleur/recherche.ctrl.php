@@ -31,7 +31,6 @@ require_once('../model/model.classDAO.php');
     $rec = "";
   }
 
-
   $config = parse_ini_file('../config/config.ini');
 
   if($dao->estCatMere($_GET['c'])){

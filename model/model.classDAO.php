@@ -230,18 +230,18 @@ function getNOffreCorespondanteMere($firstId, $region, $categorie, $rec) : array
     return $tab;
 }
 
-function getNbOffreRec($region, $categorie) {
+function getNbOffreRec($region, $categorie, $rec) {
   if($region=='Toute' && $categorie=='Toute'){
-    $where = " ";
+    $where = "WHERE ";
   }elseif($region!='Toute' && $categorie!='Toute'){
-    $where = "WHERE region = \"$region\" AND categorie = $categorie";
+    $where = "WHERE region = \"$region\" AND categorie = $categorie AND";
   }elseif($region!='Toute' && $categorie=='Toute'){
-    $where = "WHERE region = \"$region\"";
+    $where = "WHERE region = \"$region\" AND";
   }elseif($region=='Toute' && $categorie!='Toute'){
-    $where = "WHERE categorie = $categorie";
+    $where = "WHERE categorie = $categorie AND";
   }
 
-  $req = "SELECT COUNT(*) as count FROM offre $where";
+  $req = "SELECT COUNT(*) as count FROM offre $where intitule LIKE \"%$rec%\"";
   try{
       if($d = $this->db->query($req)){
         $nb=$d->fetch();
@@ -253,11 +253,11 @@ function getNbOffreRec($region, $categorie) {
     return (int)$nb["count"];
 }
 
-function getNbOffreRecCatMere($region, $categorieMere) {
+function getNbOffreRecCatMere($region, $categorieMere, $rec) {
   $cats = $this->getCatFille($categorieMere);
   $n=0;
   foreach ($cats as $catf) {
-      $n += $this->getNbOffreRec($region,$catf->__get('id'));
+      $n += $this->getNbOffreRec($region,$catf->__get('id'),$rec);
   }
   return (int)$n;
 }
